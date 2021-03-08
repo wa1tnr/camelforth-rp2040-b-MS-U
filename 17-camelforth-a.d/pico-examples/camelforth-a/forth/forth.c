@@ -1,8 +1,11 @@
-#define DATE_STAMP "Mon Mar  8 05:21:42 UTC 2021"
-// old standard width for this field: #define BRANCH_STAMP "erase_sector-a"
-#define BRANCH_STAMP  "main-with-flash-ops-a-no-emit-a-   __"
-#define COMMIT_STAMP  "62600eb"
-#define FEATURE_STAMP "+auto_load +rewind +flaccept         "
+#define DATE_STAMP "Mon Mar  8 18:28:51 UTC 2021"
+// #define BRANCH_STAMP  "main-with-flash-ops-a-no-emit-a-   __"
+#define BRANCH_STAMP  "0.1.5-pre-alpha develop main       __"
+// 0.1.5-pre-alpha  presumptive - later today
+#define COMMIT_STAMP  "3aa7029"
+// #define FEATURE_STAMP "+auto_load +rewind +flaccept         "
+#define FEATURE_STAMP "+no_emit +auto_load +rewind +flaccept"
+// still has rewind bug - must call 'rewind' prior to 'COLD'
 // #define MODE_STAMP "copy_to_ram"
 #define MODE_STAMP "copy_to_ram"
 // #define MODE_STAMP "no_flash   "
