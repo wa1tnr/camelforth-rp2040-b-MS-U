@@ -1,18 +1,19 @@
-#define DATE_STAMP "Mon Mar  8 18:28:51 UTC 2021"
+#define DATE_STAMP "Mon Mar  8 22:18:11 UTC 2021"
 // #define BRANCH_STAMP  "main-with-flash-ops-a-no-emit-a-   __"
-#define BRANCH_STAMP  "0.1.5-pre-alpha develop main       __"
+#define BRANCH_STAMP  "dvlp-aa               0.1.5-pre-alpha"
 // 0.1.5-pre-alpha  presumptive - later today
-#define COMMIT_STAMP  "3aa7029"
+#define COMMIT_STAMP  "6c8e719"
 // #define FEATURE_STAMP "+auto_load +rewind +flaccept         "
 #define FEATURE_STAMP "+no_emit +auto_load +rewind +flaccept"
 // still has rewind bug - must call 'rewind' prior to 'COLD'
 // #define MODE_STAMP "copy_to_ram"
-#define MODE_STAMP "copy_to_ram"
+// #define MODE_STAMP "copy_to_ram"
 // #define MODE_STAMP "no_flash   "
-// #define MODE_STAMP "no_flash   "
+#define MODE_STAMP "no_flash   "
 #define VERS_CFORTH ("\103CamelForth in C v0.1 - 14 Feb 2016 - " DATE_STAMP "  ");
 // old count reasonable branch stamp: #define DOFILLS_datus ("\200\n\n +flwrite +erase " DATE_STAMP " \n branch " BRANCH_STAMP " " COMMIT_STAMP " UNDER TEST    \n " MODE_STAMP " mode\n\n            ");
-#define DOFILLS_datus ("\237\n\n " FEATURE_STAMP DATE_STAMP " \n branch " BRANCH_STAMP " " COMMIT_STAMP " UNDER TEST   \n " MODE_STAMP " mode\n\n");
+// #define DOFILLS_datus ("\237\n\n " FEATURE_STAMP DATE_STAMP " \n branch " BRANCH_STAMP " " COMMIT_STAMP " UNDER TEST   \n " MODE_STAMP " mode\n\n");
+#define DOFILLS_datus ("\n   " FEATURE_STAMP "    \n   branch " BRANCH_STAMP " " COMMIT_STAMP " UNDER TEST   \n   " MODE_STAMP " mode\n\n");
 // special attempt: make some pointerish things more robust by superstitiously using 'volatile' all over the place ;)
 // surprisingly, all these changes in this commit do compile cleanly.
 /****h* camelforth/forth.c

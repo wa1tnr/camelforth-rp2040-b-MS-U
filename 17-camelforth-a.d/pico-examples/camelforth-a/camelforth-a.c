@@ -45,26 +45,25 @@ int main(void) {
 
     sleep_ms(800);
     for (int i=3;i>0;i--) _pico_LED();
-    uart_puts(UART_ID, "\r\n\r\n   camelforth-rp2040-aU r0.1.4-pre-alpha\r\n\r\n");
-    printf(            "\r\n\r\n   camelforth-rp2040-aU r0.1.4-pre-alpha\r\n\r\n");
+    uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\r\n\r\n");
+    printf(            "\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\n\n");
 
-    uart_puts(UART_ID, "        +erase +flwrite +reflash +dump +blink +UART +USB\r\n");
-    printf(            "        +erase +flwrite +reflash +dump +blink +UART +USB\r\n");
+    uart_puts(UART_ID, "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\r\n        +reflash +dump +blink +UART +USB\r\n");
+    printf(            "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\n        +reflash +dump +blink +UART +USB\n");
+//  printf(            "        +erase +flwrite +reflash +dump +blink +UART +USB\n");
 
     crufty_printer(); // examine ram with this nonsense function
-    flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
-    printf("flash_range_erase is required (and completed).\n");
+    // flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
+    // printf("flash_range_erase is required (and completed).\n");
 
     uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET_B ;
-    printf("%s", "\n\n       start_address: ");
-    printf("%8X", start_address);
+    // printf("%s", "\n\n       start_address: ");
+    // printf("%8X", start_address);
 
-    printf("%s", "\n");
+    // printf("%s", "\n");
 
     while(1) {
-        // _pico_LED(); // test using GPIO hardware to blink Pi Pico onboard LED
         interpreter(); // camelforth
     }
 }
-
-/// \end::hello_uart[]
+// END.
