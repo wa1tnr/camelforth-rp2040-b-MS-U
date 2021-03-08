@@ -53,8 +53,14 @@ int main(void) {
 //  printf(            "        +erase +flwrite +reflash +dump +blink +UART +USB\n");
 
     crufty_printer(); // examine ram with this nonsense function
-    // flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
-    // printf("flash_range_erase is required (and completed).\n");
+
+
+// kludge: bug with flash access in no_flash binary compile (see CMakeLists.txt for the toggle)
+// #undef NO_FLASH_CMAKE
+#ifdef NO_FLASH_CMAKE
+    flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
+    printf("flash_range_erase is required (and completed).\n");
+#endif
 
     uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET_B ;
     // printf("%s", "\n\n       start_address: ");
