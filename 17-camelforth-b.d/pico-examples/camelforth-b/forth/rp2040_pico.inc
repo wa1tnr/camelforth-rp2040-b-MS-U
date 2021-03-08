@@ -1,4 +1,4 @@
-/****h* camelforth-a/src/cf/rp2040_pico/rp2040_pico.inc
+/****h* camelforth-b/forth/rp2040_pico.inc
  *
  * from:
  ****h* camelforth/tivaio.c

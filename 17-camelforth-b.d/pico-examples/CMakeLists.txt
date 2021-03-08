@@ -20,5 +20,5 @@ endif()
 
 # Hardware-specific examples in subdirectories:
 # add_subdirectory(cmake)
-add_subdirectory(camelforth-a)
+add_subdirectory(camelforth-b)
 # add_subdirectory(system)
