@@ -1,0 +1,1 @@
+60838b535226447b4c1d1fe2ad2b3ee7  ./camelforth-a.uf2
