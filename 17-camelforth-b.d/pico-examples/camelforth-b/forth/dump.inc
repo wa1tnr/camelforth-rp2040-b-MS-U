@@ -13,11 +13,13 @@
 
 /* dump 16 bytes of RAM in hex with ascii on the side */
 
+/*
 void d_three_sp(void) {         // print three spaces
     for (int i = 3; i > 0; i--) {
         putch('\040');
     }
 }
+*/
 
 void d_two_sp(void) {
     putch('\040');
@@ -29,7 +31,7 @@ void dumpRAM() {
     int p = psp[0];
     psp++;
     ram = (char *) p;
-    printf("\n%4X: ", p);
+    printf("\n%4X:", p);
 
     int count = -1;
     for (int i = 0; i < 16; i++) {
@@ -45,7 +47,7 @@ void dumpRAM() {
     }
 
     ram = (char *) p;
-    d_three_sp();
+    d_two_sp(); // d_three_sp();
 
     for (int i = 0; i < 16; i++) {
         print_string[0] = (uint32_t) * ram++;
