@@ -1,7 +1,10 @@
-#define DATE_STAMP "Mon Mar  8 23:20:17 UTC 2021"
-#define BRANCH_STAMP  "dvlp-aa                  0.1.5-pre-alpha"
-#define COMMIT_STAMP  "8f12116" // seven characters
-#define FEATURE_STAMP "+no_emit +auto_load +rewind +flaccept"
+// forth.c
+#define RECENT_STAMP      "Mon Mar  8 23:47:40 UTC 2021"
+
+#define COMMIT_TIME_STAMP "Mon Mar  8 23:34:36 UTC 2021"
+#define BRANCH_STAMP      "dvlp-aa                         0.1.5-pre-alpha"
+#define COMMIT_STAMP      "dc1ea74" // seven characters
+#define FEATURE_STAMP     "+no_emit +auto_load +rewind +flaccept"
 
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
 // otherwise COLD behaves the old way.  Feature?
@@ -10,8 +13,8 @@
 #define MODE_STAMP "copy_to_ram"
 // #define MODE_STAMP "no_flash   "
 // #define MODE_STAMP "no_flash   "
-#define VERS_CFORTH ("\103CamelForth in C v0.1 - 14 Feb 2016 - " DATE_STAMP "  ");
-#define DOFILLS_datus ("\n   " FEATURE_STAMP "    \n   branch " BRANCH_STAMP " " COMMIT_STAMP " UNDER TEST   \n   " MODE_STAMP " mode\n\n");
+#define VERS_CFORTH ("\103CamelForth in C v0.1 - 14 Feb 2016 - " COMMIT_TIME_STAMP "  ");
+#define DOFILLS_datus ("\n   " FEATURE_STAMP "    \n   branch " BRANCH_STAMP " " COMMIT_STAMP "\n   " MODE_STAMP " mode                  "  RECENT_STAMP "\n\n");
 
 // special attempt: make some pointerish things more robust by
 // superstitiously using 'volatile' all over the place ;)

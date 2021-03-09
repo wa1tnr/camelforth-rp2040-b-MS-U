@@ -59,7 +59,7 @@ int main(void) {
 // #undef NO_FLASH_CMAKE
 #ifdef NO_FLASH_CMAKE
     flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
-    printf("flash_range_erase is required (and completed).\n");
+    printf("   flash_range_erase is required (and completed).\n\n");
 #endif
 
     uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET_B ;
