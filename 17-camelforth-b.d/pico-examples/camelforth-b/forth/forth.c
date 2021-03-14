@@ -1,8 +1,8 @@
 // forth.c
-#define RECENT_STAMP      "Tue Mar  9 17:01:25 UTC 2021"
-#define COMMIT_TIME_STAMP "Tue Mar  9 17:01:25 UTC 2021"
+#define RECENT_STAMP      "Sun Mar 14 13:57:30 UTC 2021"
+#define COMMIT_TIME_STAMP "Sun Mar 14 01:06:38 UTC 2021"
 #define BRANCH_STAMP      "dvlp-aa                         0.1.5-pre-alpha"
-#define COMMIT_STAMP      "7caa371" // seven characters
+#define COMMIT_STAMP      "65dbba6" // seven characters
 #define FEATURE_STAMP     "+no_emit +auto_load +rewind +flaccept"
 
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
