@@ -3,11 +3,13 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+//here
 
 #include "pico/stdlib.h"
+#include "pico-LED.h"
 
 int _pico_LED() {
-    const uint LED_PIN = 25;
+    const uint LED_PIN = LED_PIN_MASTER; // pico_LED.h
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     // while (true) {
