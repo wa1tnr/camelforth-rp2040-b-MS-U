@@ -1,0 +1,12 @@
+adafruit_feather_rp2040
+adafruit_itsybitsy_rp2040
+adafruit_qtpy_rp2040
+none
+pico
+pimoroni_keybow2040
+pimoroni_picosystem
+pimoroni_tiny2040
+sparkfun_micromod
+sparkfun_promicro
+sparkfun_thingplus
+vgaboard
