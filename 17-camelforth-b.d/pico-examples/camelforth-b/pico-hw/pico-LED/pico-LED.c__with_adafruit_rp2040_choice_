@@ -1,0 +1,44 @@
+/**
+ * Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#include "pico/stdlib.h"
+
+int _pico_LED() {
+
+#undef CFORTH_LED
+
+// if the board is a pico then create a singleton flag and define the LED pin for camelforth
+#ifdef _BOARDS_PICO_H
+#define CFORTH_LED
+#define CFORTH_SINGLETON_FLAG
+    const uint LED_PIN = 25;
+#endif
+
+
+// if adafruit feather and no singleton already present, then define for camelforth
+#ifdef ADAFRUIT_FEATHER_RP2040
+#ifndef CFORTH_SINGLETON_FLAG
+#define CFORTH_LED
+    const uint LED_PIN = 13;
+#endif // #ifndef CFORTH_SINGLETON
+#ifdef CFORTH_SINGLETON_FLAG
+-77777 // throw a compiler error - unplanned combination of both Pico and Adafruit RP2040
+#endif // #ifdef CFORTH_SINGLETON_FLAG
+// now set the singleton flag, it's okay:
+#define CFORTH_SINGLETON_FLAG // future expansion only - not used presently
+#endif // #ifdef ADAFRUIT_FEATHER_RP2040
+
+#ifdef CFORTH_LED
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+    // while (true) {
+        gpio_put(LED_PIN, 1);
+        sleep_ms(250);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(250);
+    // }
+#endif // break code if CFORTH_LED still isn't defined
+}
