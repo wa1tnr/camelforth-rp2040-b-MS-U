@@ -9,7 +9,12 @@
 
 # ls ../../pico-sdk/src/boards/include/boards/adafruit_feather_rp2040.h
 
-exit 0 # don't print the message below
+exit 0 # do not continue.  Exits this script on all pathways through it.
+
+# cd pico-examples/build # just to establish where this is
+
+# Raspberry Pi Pico RP2040 is just 'pico' here:
+cmake -D"PICO_BOARD=pico" .. >> ./build.log 2>&1 ; date
 
 # documentation follows - from Appendix D of the SDK doco
 
