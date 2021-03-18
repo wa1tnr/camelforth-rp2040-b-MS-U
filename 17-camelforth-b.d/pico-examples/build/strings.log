@@ -1,0 +1,148 @@
+
+ $  md5sum pico-examples/build/camelforth-b/camelforth-b.uf2
+9633dbb0ead8e7b35cf04888ba9df7c6  pico-examples/build/camelforth-b/camelforth-b.uf2
+ 
+ $   strings ./pico-examples/build/camelforth-b/camelforth-b.uf2 | fmt -w67 > strings.log
+
+2K! X` aXa.K RPT" :TBbA
+ +K,Jp
+`+J,K,I *L+M $J K @"!K!L"M +K,I F[B)J ZBSA#J[ 5C+` jS@n"
+!M,h &xMF7
+ @BCF
+Z`vK#avKYh "hKsH Q`cacKZh "BKR aRKYh "PK!j K`.KBJ#bBKYh "?Kaj
+Kcb0KZh @@Ys #[BC` FWFNF DJFXK FZFHK ZFGK [ADIYC ZF0K ZF.K
+IA"KKC *!QV `pG@ FaDbD ThKh WFNFEF BFEFD Zp[F#pCF]sKF2 pCF[{
+hYF[h G[FBF[ pZFCF( FWFNFEF FdD#x 3#p7ash 5hl{ KFXF
+ CIF
+#`D#u HpG` FWFNF `BF3h 9pts(} WFNFEF SDBF bDSx FRDII pCF[{
+@FCFRF[h YpSF KF[h KF[h CFRFZsKF2 KFQF FNFEFWF `AFY`UI hbh[ B{+@
+FJFbD "ach 'JSj ;pus }JFCF FWFNF &L!h F I"M 5C^F5p b\cCF !YpQp
+NFWFEF Spos F[DZx "ZpJpkh AFPFZFY GSFY LpQF YFBFY HpQF FPFBF
+@FdFDpXF FWFNF BxZp FQDHxKpSpkh pOFZF GKF[ BF+h +hBF FQDHxKpSpaF"
+RFCF PpJF GCFZ XpCF FaD[ )hHF AFRFY HpIF )hSF JFHp SF@F CFHF
+9Lpn{ WFEF SF $ + [FSD FWFNF @VF[F PFYF sBsA[B PFYF* FRF[FPFYF
+"lKRBPFYF @YBKA[B RFCF9 GKF" UF\F %J&KPFYF ?aCoc F_FVFMKIF
+".KPFYF F_FVF FRFFF FWFNFEF CF + BFSF01 EFWF BF $ * BFQFT @F-"
+FZF7 FDFVF 0]SFIF G[F" FdD7 FBF7 G[F" FZF7 FLFCFBF G[F" F0#RF
+AF ;PF CF + SFBF01 VFEF FOFS DcF BF0# * BFPF# FdD7 FBF7 G[F"
+BFQFT @F+" EFWFNF FOFCF + TF0" "T + FQF."
+ "QF@F
+WFNFEF ]FVF p]CFIF ZDOF GKF" [F01YUHF FNFWF
+ $ -
++"YFl KFSD GKF" "(KRB F0#ZF 0" ;YF [F01YUPF KFUF [F01 FNFWF 0#
+-: -"YFl FNFWF - BU + F."YF]
+ "YF
+FWFNFEF CFIF G0xl CFQF C0xr 0;	    + Fpxl( pxh( IFCFPF CFIF%
+GCFX]* 70      ) CFIFPF xIFCF G[F]D WFMF A'ZF 080;    ( 0;	+
+CYFIB Kx08 }J}K ZBSA "@KRB YBKA '[BQ CFIFE0 IFCFPF \FWFS FIFCF
+GRFS ?aCoc 4CF* IF  ' xIFCF CFIF  T \IFCF CFIF ]IFCF \FNFWF CF
+GRFS NFWF 5CF1 5CF1 CFIFPF \FNFWF CF GRFS DbF_h ;@d( IFCFPF IFCF
+]IFCF CFIF  T CFIF  T \IFCF CFIF  T CF!h 4nunwo6o fUfWg 4nunwo6o
+fUfWg O8fzf zo8ogFpG O9fzf {o9o #C;f {o=o #C;f zo8o 4%O|f%L<f
+<ofC6 >CfC6 dFfC 4FO|fFL<f F<ofC6 >CfC)' rCsC O}f9f eCfC@ eCfC6
+H@A@H@ P@B@P@Y@K@Y@ &K@ F .F @3A*C "dBPAQAbFM @AIA
+ >@7
+@9A(C
+ ?@6
+w@dD @AIA &qAfF5C !@??	%CuC '~A6 @AIA$ {ARB 0QA@ aA[F;A\F
+@"CDFMFbAkA CRF[F AKF;ALF @"CTF]FbAkA CBFKF L GbD4: @RB 2 @RB
+2 RB 2 QCCC PCbC QAaDpG e#fcf f#gcg F@"cD F`DA` F@"cD #`DC`pG
+\c\N ;ZBSA;t `|)h FEFWFNF 2NGF GKF+pb|#h [FGF ;ZBSA#t \BcA
+ pGKy
+HpGL FFOF `Y`8 FWFNF F#B$ TYqG1ZT #BF[ C\Ch#r FdD #BF[ HBTBqG2
+`!a"p& uZTpG F1@MC4"
+	bC=HBD
+pNBNA pVqJF 4"h&bCNC eF067p `h%4"MC FbC'ObD>h @#?"  C@3;` Kh"s@
+4#JCcC `4#\C43YCg;a %4 h#
+	kC`C
+CxZBSA	J h#4!]CaCI %4 h#
+	kC`C
+CxZBSA	J h#4!]C #aCI
+	#cg
+*Ccy !K@cq$# FcD* _B{A$' !J@bq !K+@ "#b$3 F iaD u2 #T cuSBSA$&%"
+*Cay
+ A@aq
+YBKA$!cT F!i`D KXxC `!L N+x0` FWFNFEF & 0Ey CEqEy ]iby x `#&y3@`+
+`"#y rNpJ3x !ZH'x TNRJ3x cD[h8 <K7" 3N1J3x cD[h8 JF#y by x cy
++ `#"y ;JKD .H.N `"#y !H"M CD 3[y CD 3Zy CZqZy CD 3Zy !ZqZy C
+!+@ .plp
+ 4ey
+NIB0h Ccq0h LIB h !)@K
+ 1Ky
+CKq h
+ 4ey
+%`y(C`q0 Ccqcy `iV0 F!N(5 3#s* x       %;p cx$+ x{p#x Kx + "@!@
+FFOF KF+`CF FQC( FQC^ rC@F pCZC@D!h jC@F FPC1 OFFF PF"hXC FZCAF
+JCYC hAD RFAFjC %7hqh KAs` @Z`pG @Z`pG hYBKA[B XBCA[B "RBZ`
+"RBZ` ``!` BVA5 BRA*C	% x:pBF ZxzpBF M,h"
+ hch
+2*`& `c`p M,h"
+ hch
+2*`& `c`p FGFJF(h
+ JFcF
+`pGH
+	L	H!
+<ah0 F@NmB
+ ;^+6
+Uf'(L)M!  'pfp 'pfpF?  'pfp #pfp #pfp 'pfp SFBF #JF	H
+"#hRB MvB?  WFNFEF OF8J IF7H F4LvB[F} 9x0H PF&pep PF&pep .#NF
+ :^*
+KF#pCF!  PFcp PFcp PFcp FWFNFEF F/Ov IFXF AFPF "+KR FOFFF $;hv
+CF#@ CF#@ %<h@ `Z`pG 4 hah YA `a`H
+	L#x
+##p0
+   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha camelfor
+th-rp2040-b-MS-U r0.1.5-pre-alpha
+	+no_emit +auto_load +rewind +flaccept +erase +flwrite
+	+reflash +dump +blink +UART +USB +no_emit +auto_load
+	+rewind +flaccept +erase +flwrite +reflash +dump +blink
+	+UART +USB
+Hard ass *** PANIC *** No spinlocks are available Hardware alarm
+%d already claimed
+ nan
+fni- fni+
+ Release
+boot2_w25q080 https://github.com/raspberry
+pi/pico-examples/tree/HEAD/camelforth-b 1.1.0 pico camelforth-b
+Mar 18 2021 UART stdin UART stdout UART stdin / stdout
+ USB stdin / stdout
+Raspberry Pi Pico 000000000000 Boar d CDC Reset
+ Isochronous wMaxPacketSize %d too large
+Unhandled IRQ 0x%x ep %d %s was already available Can't continue
+xfer on inactive ep %d %s Transferred more data than expected
+ %2X %8X
+%8x:
+ ESC!
+%4X:
+ %02X DEBUG: assume offset_b: %d DEBUG: offset_expnd: %d
+boundary:
+ FLASH_TARGET_OFFSET:
+       start_address:
+Generated random data: Erasing target region...  Done. Read back
+target region: Programming tar get region...  Programming failed!
+Programming successful!
+	    XIP_BASE:
+%02x GpF     8 ABORT ABORT" ACCEPT ADR>IN AGAIN ALIGN ALIGNED
+ALLOT BASE BEGIN blink [CHAR] branch
+	buf2flash
+<BUILDS CELL+ CELLS CHAR CHAR+ CHARS CMOVE CMOVE> COLD ,BRANCH
+,DEST ,EXIT ,NONE COMPILE, COMPILE CONSTANT COUNT CREATE DABS
+DECIMAL DEPTH DIGIT?  DNEGATE DOES> .HHHH DROP DUMP ELSE EMIT
+ENDLOOP ENVIRONMENT?  erase EVALUATE EXECUTE EXIT FILL FIND
+flaccept flkey flquit flwrite FM/MOD HEADER HERE HIDE HOLD
+	IMMEDIATE
+IMMED?
+	INTERPRET
+INVERT I->D KEY?  LATEST LEAVE LITERAL LOOP LSHIFT MARKER MOVE
+NEGATE NEWEST NFA>CFA NFA>LFA #INIT PARSE +LOOP POSTPONE ?ABORT
+?branch ?DNEGATE ?DUP ?NEGATE ?NUMBER ?SIGN QUIT reading RECURSE
+reflash REPEAT REVEAL rewind RSHIFT SCAN SIGN SKIP /MOD /STRING
+SM/REM SOURCE SPACE SPACES */MOD STATE !COLON !DEST SWAP THEN
+TIBSIZE 'SOURCE >BODY >COUNTED >DIGIT >NUMBER TUCK 2DROP 2DUP
+2OVER 2SWAP TYPE UD/MOD UINIT UMAX UMIN UM/MOD UNLOOP UNTIL USER
+VARIABLE WHILE WITHIN WORD WORDS (do) (DOES>) (loop) (+loop)
+ CCamelForth
+in C v0.1 - 14 Feb 2016 - Sun Mar 14 14:26:48 UTC 2021
+   +no_emit +auto_load +rewind +flaccept branch dvlp-aa
+   0.1.5-pre-alpha a6b252f copy_to_ram mode		     Sun
+   Mar 14 14:27:56 UTC 2021
