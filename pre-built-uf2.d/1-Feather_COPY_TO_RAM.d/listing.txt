@@ -1,0 +1,9 @@
+34fac1176ca9ac6c5b86b3745ac2e50b  camelforth-b.uf2
+33cc044dcc4fe67c6a1edd3e385eead9  camelforth-b.uf2.md5.txt
+
+This was built 22 March after modifying things to
+build for Feather RP2040 from Adafruit.
+
+Expected to run well on that target.
+
+Entirely untested on hardware, as of 22 March 2021.
