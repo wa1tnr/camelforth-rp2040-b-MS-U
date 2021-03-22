@@ -1,17 +1,25 @@
 #!/bin/sh
+# cd pico-examples/build # just to establish where this is
+
 # cmake -D"PICO_BOARD=myboard" ..
 
-# $ sh ./run_cmake_feather.sh
+# sh ./run_cmake_feather.sh
 
 # example only - may be applied to any board.
 
- cmake -D"PICO_BOARD=adafruit_feather_rp2040" ..  # dont miss the dot dot
-
-# ls ../../pico-sdk/src/boards/include/boards/adafruit_feather_rp2040.h
+cmake .. -D"PICO_BOARD=adafruit_feather_rp2040" -D"BOOT2_GENERIC_CF_LOCAL=1"
 
 exit 0 # do not continue.  Exits this script on all pathways through it.
 
-# cd pico-examples/build # just to establish where this is
+# the 'exit 0' protects this code from being executed:
+
+# standard build: RPi Pico 2040 target board:
+cmake .. -D"PICO_BOARD=pico"
+
+# Adafruit Feather RP2040, March 2021:
+cmake .. -D"PICO_BOARD=adafruit_feather_rp2040" -D"BOOT2_GENERIC_CF_LOCAL=1"
+
+# ls ../../pico-sdk/src/boards/include/boards/adafruit_feather_rp2040.h
 
 # Raspberry Pi Pico RP2040 is just 'pico' here:
 cmake -D"PICO_BOARD=pico" .. >> ./build.log 2>&1 ; date
