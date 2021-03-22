@@ -1,0 +1,1 @@
+34fac1176ca9ac6c5b86b3745ac2e50b  ./camelforth-b.uf2
