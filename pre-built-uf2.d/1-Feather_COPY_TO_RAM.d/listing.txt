@@ -1,9 +1,13 @@
-34fac1176ca9ac6c5b86b3745ac2e50b  camelforth-b.uf2
-33cc044dcc4fe67c6a1edd3e385eead9  camelforth-b.uf2.md5.txt
+c4f0dd2b7bfc595df18c7afefbca6229  camelforth-b.uf2
+88904836e93250736295ff0cc0658a2e  camelforth-b.uf2.md5.txt
 
-This was built 22 March after modifying things to
+This was built 23 March after modifying things to
 build for Feather RP2040 from Adafruit.
 
 Expected to run well on that target.
 
-Entirely untested on hardware, as of 22 March 2021.
+Entirely untested on hardware, as of 23 March 2021.
+
+AS COMMITTED - see 'strings' here.
+
+copy_to_ram  generic boot2  develop branch (SDK).
