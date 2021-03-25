@@ -1,0 +1,43 @@
+
+  ok 0 ERASE_BLOCK
+
+
+  : BLOCK ( n -- addr )
+    4096 * 10040000 + ;
+
+  : ERASE ( addr -- ) \ does something to erase flash at address
+    1 drop \ dummy placeholder
+  ;
+
+  ok 0 BLOCK
+
+  ok 0 BLOCK ERASE
+
+The above covers the rudaments of erasure of just
+a specific code block (4096 bytes, per erasure
+unit already in use as the minimum).
+
+Writing (ascii plaintext) code (that was) uploaded (into SRAM)
+would follow a similar pattern and would reuse the BLOCK word.
+
+ ok 0 BLOCK buf2flash
+
+: reading ( -- addr )
+  \ code
+  1 drop \ dummy placeholder
+;
+
+: buf2flash ( addr -- )
+  \ code
+  1 drop \ placeholder
+;
+
+Note that 'reading' provides the source address of SRAM image.
+
+ ok reading <code upload> ESC
+ ESC! seen ( -- addr )
+ ok 0 BLOCK SWAP buf2flash
+    \ the SWAP repositions the flash address deeper into
+    \ the stack than the SRAM buffer address, which buf2flash
+    \ expects to find on TOS.
+
