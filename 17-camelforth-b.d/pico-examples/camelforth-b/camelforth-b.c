@@ -13,6 +13,8 @@
 #include <stdlib.h>         // rp2040_flash_ops.inc
 #include "pico/stdlib.h"
 #include "hardware/flash.h" // rp2040_flash_ops.inc
+#include "tusb.h"
+// #include "cdc_device.h" // mystery location
 
 // #define FLASH_TARGET_OFFSET_B (256 * 1024)
 #define FLASH_TARGET_OFFSET_B 0x1E0000
@@ -30,7 +32,21 @@ const uint8_t *flash_target_contents_b = (const uint8_t *) (XIP_BASE + FLASH_TAR
 #define UART_RX_PIN 1
 extern void interpreter(void);
 extern void crufty_printer(void);
+
+extern void _pico_LED_init(void);
+extern void _pico_pip(void);
 extern int _pico_LED(void);
+
+void _loop_delay_local(void) {
+    for (volatile int i=3333333;i>0;i--) {
+        for (volatile int j=4;j>0;j--) { }
+    }
+}
+
+void blink_loop(void) {
+    _pico_pip();
+    _loop_delay_local();
+}
 
 int main(void) {
     sleep_ms(1800);
@@ -44,6 +60,11 @@ int main(void) {
     // uart_putc_raw(UART_ID, 'A');
 
     sleep_ms(800);
+    // if bool     tud_cdc_n_connected       (uint8_t itf);
+    _pico_LED_init();
+    while (! tud_cdc_n_connected (0)) {
+        blink_loop(); // no while - done only once
+    }
     for (int i=3;i>0;i--) _pico_LED();
     uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\r\n\r\n");
     printf(            "\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\n\n");
@@ -73,3 +94,4 @@ int main(void) {
     }
 }
 // END.
+

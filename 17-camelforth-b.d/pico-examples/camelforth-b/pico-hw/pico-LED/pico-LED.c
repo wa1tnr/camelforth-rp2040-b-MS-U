@@ -8,10 +8,24 @@
 #include "pico/stdlib.h"
 #include "pico-LED.h"
 
-int _pico_LED() {
+void _pico_LED_init(void) {
     const uint LED_PIN = LED_PIN_MASTER; // pico_LED.h
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
+}
+
+int _pico_pip(void) {
+    const uint LED_PIN = LED_PIN_MASTER; // pico_LED.h
+    gpio_put(LED_PIN, 1);
+    sleep_ms(11);
+    gpio_put(LED_PIN, 0);
+    sleep_ms(11);
+}
+
+int _pico_LED(void) {
+    const uint LED_PIN = LED_PIN_MASTER; // pico_LED.h
+    // gpio_init(LED_PIN);
+    // gpio_set_dir(LED_PIN, GPIO_OUT);
     // while (true) {
         gpio_put(LED_PIN, 1);
         sleep_ms(250);

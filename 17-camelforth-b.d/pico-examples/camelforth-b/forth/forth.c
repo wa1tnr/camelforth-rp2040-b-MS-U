@@ -1,10 +1,11 @@
 // forth.c
-#define RECENT_STAMP      "Tue Mar 23 17:00:23 UTC 2021"
-#define COMMIT_TIME_STAMP "Tue Mar 23 16:55:03 UTC 2021"
-#define BRANCH_STAMP      "dvlp-boot2-TESTING              0.1.5-pre-alpha"
-#define COMMIT_STAMP      "9561801" // seven characters
+#define RECENT_STAMP      "Sat Mar 27 05:41:29 UTC 2021"
+#define COMMIT_TIME_STAMP "Thu Mar 25 00:15:46 UTC 2021"
+#define BRANCH_STAMP      "dvlp-boot2-TESTING-blink-wait   0.1.5-pre-alpha"
+#define COMMIT_STAMP      "8815f81" // seven characters
 #define FEATURE_STAMP     "+feather +no_emit +auto_load +rewind "
 
+// towards addressible flash block writes
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
 // otherwise COLD behaves the old way.  Feature?
 
@@ -659,7 +660,18 @@ CODE(dots) {    /* print stack, for testing */
     while (p >= psp) { printf(" %8X", *p--); } // changed conversion to upper case ABCDEF
 }
 
+extern void _pico_LED_init(void);
+extern void _pico_pip(void);
 extern int _pico_LED(void);
+
+CODE(LED_init) { /* -- */
+    _pico_LED_init();
+}
+
+CODE(pip) { /* -- */
+    _pico_pip();
+}
+
 CODE(blink) { /* -- */
     _pico_LED();
 }
@@ -813,6 +825,8 @@ PRIMITIVE(dothh);
 PRIMITIVE(dothhhh);
 PRIMITIVE(dots);
 PRIMITIVE(dump);
+PRIMITIVE(LED_init);
+PRIMITIVE(pip);
 PRIMITIVE(blink);
 // PRIMITIVE(runtime_init);
 PRIMITIVE(reflash);
@@ -1700,7 +1714,9 @@ HEADER(dothhhh, dothh, 0, "\005.HHHH");
 HEADER(dots, dothhhh, 0, "\002.S");
 HEADER(dump, dots, 0, "\004DUMP");
 HEADER(words, dump, 0, "\005WORDS");
-HEADER(blink, words, 0, "\005blink");
+HEADER(LED_init, words, 0, "\010LED_init");
+HEADER(pip, LED_init, 0, "\003pip");
+HEADER(blink, pip, 0, "\005blink");
 HEADER(reflash, blink, 0, "\007reflash");
 HEADER(flwrite, reflash, 0, "\007flwrite");
 HEADER(buf2flash, flwrite, 0, "\011buf2flash");

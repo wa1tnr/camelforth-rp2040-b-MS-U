@@ -144,7 +144,7 @@ HEX
 ( 74 delay close but too rapid want 75 or 76 to slow it )
 : ldelay ( n -- )  72 * 0 DO shdelay LOOP ;
 : hi LED_HI ; : lo LED_LOW ;
-: pip hi shdelay lo ; 
+( pip hi shdelay lo )
 ( 7C and A were ten seconds over at 120 pips )
 ( 79 and A now on trial )
 ( 72 now ) ( 11:30:40 )
