@@ -1,10 +1,7 @@
-0.1.5-pre-alpha READY.FOR.RELEASE
+0.1.6-pre-alpha READY.FOR.RELEASE
 
-last commit 3bbeb4598b93d6e764074825cf0915e284413c94
+last commit 6a9b90ddd5b9dff6bc968e04b61e46bc860e34ee
 
-Date:   Mon Mar  8 19:06:34 UTC 2021
+Date:   Sat Mar 27 06:15:36 UTC 2021
 
-new file:   camelforth-b--08-mar-182851-3aa7029-no_flash.uf2
-new file:   camelforth-b--08-mar-182851-3aa7029-no_flash.uf2.md5.txt
-
-copy_to_ram version committed moments prior to these.
+    Blink on Wait - final edit
