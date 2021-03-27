@@ -38,8 +38,11 @@ extern void _pico_pip(void);
 extern int _pico_LED(void);
 
 void _loop_delay_local(void) {
-    for (volatile int i=3333333;i>0;i--) {
-        for (volatile int j=4;j>0;j--) { }
+    if (tud_cdc_n_connected (0)) return;
+    for (volatile int i=288;i>0;i--) { // 144 okay
+        for (volatile int j=455555;j>0;j--) {
+        }
+        if (tud_cdc_n_connected (0)) return;
     }
 }
 
