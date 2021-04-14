@@ -1,17 +1,11 @@
-# camelforth-rp2040-b-MS-U   UNSTABLE   0.1.6-pre-alpha   Wed Apr 14 14:10:42 UTC 2021
+# camelforth-rp2040-b-MS-U   UNSTABLE   0.1.7-pre-alpha   Wed Apr 14 14:43:13 UTC 2021
 
 CamelForth in C, by Dr. Brad Rodriguez
 
 UNSTABLE version - with mass storage support QSPI flashROM
 
 Stores forth source code in QSPI flash, and plays it
-back during COLD.
-
-'rewind' word controls what happens the next time COLD
-is called.  'rewind' allows the source to be read back
-into the interpreter; failure to use 'rewind' leaves
-the generic camelforth kernel, only, without the update
-to the forth dictionary provided by this mechanism.
+back during COLD (player piano).
 
 # NEWS
 
@@ -23,6 +17,53 @@ RPi Pico RP2040, Adafruit Feather and ItsyBitsy RP2040
 Use a different shell script to build each.
 
 see pico-examples/build for those scripts.
+
+Added brief documentation (see immediately, below!)
+
+# BRIEF DOCO
+
+The program will stores your Forth source code, in
+QSPI flash.
+
+It will then play it back, during COLD (player piano).
+
+There is a new 'flaccept' (flash accept) word/thread
+that does the play-back during COLD; 'rewind' is used
+to reset the pointer to the flashROM address where
+flaccept (& friends) reads in the simulated keystrokes.
+
+'rewind' word controls what happens the next time COLD
+is called.  'rewind' allows the source to be read back
+into the interpreter; failure to use 'rewind' leaves
+the generic camelforth kernel, only, without the update
+to the forth dictionary provided by this mechanism.
+
+'reflash' simply starts the target such that the USB
+mass storage is visible to the host PC.
+
+'reading' accepts ascii upload of forth source code;
+terminate with ESC (press it after the upload, the
+interpreter will see your keypress of ESC and stop
+the upload, and mark the buffer termination).
+
+Max size supported is 4096 bytes (leave off a few
+bytes for proper termination of the buffer).
+
+Short uploads are not detected - press ESC as
+detailed, above.
+
+'reading' puts out its own address onto TOS.
+
+'buf2flash' takes that address and uses it to find
+what you've just ascii-uploaded (into SRAM).
+
+It writes that block of SRAM into QSPI flashROM.
+
+Nominally, at 0x10040000 per the SDK example program.
+
+'erase' takes an address and erases the QSPI flashROM
+at that address.  Should be a multiple of 0x1000 as
+that's the size erased.
 
 # OLDER
 
