@@ -12,6 +12,7 @@
 #define FLASH_TARGET_OFFSET (256 * 1024)
 
 // swap these two:
+/*
 #define FEATHER_RP2040
 #undef FEATHER_RP2040
 
@@ -22,6 +23,7 @@
 #define FLASH_LIMIT 0x1FFFFF
 #define FLASH_MASK  0x1FF000
 #endif
+*/
 
 const uint8_t *flash_target_contents = (const uint8_t *) (XIP_BASE + FLASH_TARGET_OFFSET);
 
