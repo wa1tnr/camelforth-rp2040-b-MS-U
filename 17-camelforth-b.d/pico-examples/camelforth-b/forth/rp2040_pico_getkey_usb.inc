@@ -5,7 +5,7 @@ uint8_t getKey(void) {     // hardware-independent wrapper
     uint8_t ch_read;
     int count=0;
     int flip, flop;
-    const uint LED_PIN = 25;
+    const uint LED_PIN = 25; // hard-coded for RPi Pico RP2040 only - needs update for multiple targets
     flip=-1;
     do {
         count++;
