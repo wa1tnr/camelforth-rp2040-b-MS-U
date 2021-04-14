@@ -1,8 +1,30 @@
-# camelforth-rp2040-aU   UNSTABLE   0.1.4-pre-alpha   Tue Feb 16 15:34:07 UTC 2021
+# camelforth-rp2040-b-MS-U   UNSTABLE   0.1.6-pre-alpha   Wed Apr 14 14:10:42 UTC 2021
 
 CamelForth in C, by Dr. Brad Rodriguez
 
-UNSTABLE version
+UNSTABLE version - with mass storage support QSPI flashROM
+
+Stores forth source code in QSPI flash, and plays it
+back during COLD.
+
+'rewind' word controls what happens the next time COLD
+is called.  'rewind' allows the source to be read back
+into the interpreter; failure to use 'rewind' leaves
+the generic camelforth kernel, only, without the update
+to the forth dictionary provided by this mechanism.
+
+# NEWS
+
+14 April 2021 - three targets supported.
+
+RPi Pico RP2040, Adafruit Feather and ItsyBitsy RP2040
+(three targets) all supported.
+
+Use a different shell script to build each.
+
+see pico-examples/build for those scripts.
+
+# OLDER
 
  new feature: no-error getKey()
 
