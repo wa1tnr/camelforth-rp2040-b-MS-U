@@ -1,4 +1,4 @@
-// Sat Feb 27 23:13:02 UTC 2021
+// Wed Apr 14 20:45:28 UTC 2021
 // wa1tnr
 // camelforth
 
@@ -74,14 +74,14 @@ int main(void) {
     uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\r\n\r\n");
     printf(              "\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\n\n");
 
-    uart_puts(UART_ID, "        +alltargets +itsybitsy +blinkwait +feather +no_emit\r\n");
-    printf(            "        +alltargets +itsybitsy +blinkwait +feather +no_emit\n");
+    uart_puts(UART_ID, "        +fl_sizing +alltargets +itsybitsy +blinkwait +feather\r\n");
+    printf(            "        +fl_sizing +alltargets +itsybitsy +blinkwait +feather\n");
 
-    uart_puts(UART_ID, "        +auto_load +rewind +flaccept +erase +flwrite +reflash\r\n");
-    printf(            "        +auto_load +rewind +flaccept +erase +flwrite +reflash\n");
+    uart_puts(UART_ID, "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\r\n");
+    printf(            "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\n");
 
-    uart_puts(UART_ID, "        +dump +blink +UART +USB\r\n");
-    printf(            "        +dump +blink +UART +USB\n");
+    uart_puts(UART_ID, "        +reflash +dump +blink +UART +USB\r\n");
+    printf(            "        +reflash +dump +blink +UART +USB\n");
 
     crufty_printer(); // examine ram with this nonsense function
 
