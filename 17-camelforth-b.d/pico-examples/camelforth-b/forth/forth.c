@@ -1,8 +1,9 @@
 // forth.c
-#define RECENT_STAMP      "Sat Mar 27 06:10:31 UTC 2021"
-#define COMMIT_TIME_STAMP "Sat Mar 27 06:06:38 UTC 2021"
+#define RECENT_STAMP      "Wed Apr 14 12:16:49 UTC 2021"
+#define COMMIT_TIME_STAMP "Sat Mar 27 06:36:27 UTC 2021"
 #define BRANCH_STAMP      "dvlp-boot2-TESTING-blink-wait   0.1.5-pre-alpha"
-#define COMMIT_STAMP      "e1807a1" // seven characters
+#define BRANCH_STAMP      "dvlp-aa-all-a-                  0.1.5-pre-alpha"
+#define COMMIT_STAMP      "1e7ef4d" // seven characters
 #define FEATURE_STAMP     "+blinkwait +feather +no_emit         "
 
 // towards addressible flash block writes
