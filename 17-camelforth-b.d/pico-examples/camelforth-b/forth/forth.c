@@ -1,10 +1,11 @@
 // forth.c
-#define RECENT_STAMP      "Wed Apr 14 12:16:49 UTC 2021"
-#define COMMIT_TIME_STAMP "Sat Mar 27 06:36:27 UTC 2021"
-#define BRANCH_STAMP      "dvlp-boot2-TESTING-blink-wait   0.1.5-pre-alpha"
+
+#include "pico-hardware-camelforth.h"
+#define RECENT_STAMP      "Wed Apr 14 13:36:55 UTC 2021"
+#define COMMIT_TIME_STAMP "Wed Apr 14 13:35:31 UTC 2021"
 #define BRANCH_STAMP      "dvlp-aa-all-a-                  0.1.5-pre-alpha"
-#define COMMIT_STAMP      "1e7ef4d" // seven characters
-#define FEATURE_STAMP     "+blinkwait +feather +no_emit         "
+#define COMMIT_STAMP      "387bad7" // seven characters
+#define FEATURE_STAMP     "+alltargets +blinkwait +feather      "
 
 // towards addressible flash block writes
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
@@ -15,7 +16,7 @@
 // #define MODE_STAMP "no_flash   "
 // #define MODE_STAMP "no_flash   "
 #define VERS_CFORTH ("\103CamelForth in C v0.1 - 14 Feb 2016 - " COMMIT_TIME_STAMP "  ");
-#define DOFILLS_datus ("\n   " FEATURE_STAMP "    \n   branch " BRANCH_STAMP " " COMMIT_STAMP "\n   " MODE_STAMP " mode                  "  RECENT_STAMP "\n\n");
+#define DOFILLS_datus ("\n   " FEATURE_STAMP "  " CF_PICO_PLATFORM "\n   branch " BRANCH_STAMP " " COMMIT_STAMP "\n   " MODE_STAMP " mode                  "  RECENT_STAMP "\n\n");
 
 // special attempt: make some pointerish things more robust by
 // superstitiously using 'volatile' all over the place ;)
