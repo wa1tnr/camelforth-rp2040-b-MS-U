@@ -69,12 +69,19 @@ int main(void) {
         blink_loop(); // no while - done only once
     }
     for (int i=3;i>0;i--) _pico_LED();
-    uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\r\n\r\n");
-    printf(            "\n   camelforth-rp2040-b-MS-U r0.1.5-pre-alpha\n\n");
+    // stale message text follows - poorly maintained.
+    // poor testing of latest edits - may cause issues.  However, brief test seemed okay.
+    uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\r\n\r\n");
+    printf(              "\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\n\n");
 
-    uart_puts(UART_ID, "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\r\n        +reflash +dump +blink +UART +USB\r\n");
-    printf(            "        +no_emit +auto_load +rewind +flaccept +erase +flwrite\n        +reflash +dump +blink +UART +USB\n");
-//  printf(            "        +erase +flwrite +reflash +dump +blink +UART +USB\n");
+    uart_puts(UART_ID, "        +alltargets +itsybitsy +blinkwait +feather +no_emit\r\n");
+    printf(            "        +alltargets +itsybitsy +blinkwait +feather +no_emit\n");
+
+    uart_puts(UART_ID, "        +auto_load +rewind +flaccept +erase +flwrite +reflash\r\n");
+    printf(            "        +auto_load +rewind +flaccept +erase +flwrite +reflash\n");
+
+    uart_puts(UART_ID, "        +dump +blink +UART +USB\r\n");
+    printf(            "        +dump +blink +UART +USB\n");
 
     crufty_printer(); // examine ram with this nonsense function
 

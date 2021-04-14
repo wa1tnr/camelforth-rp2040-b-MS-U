@@ -1,11 +1,11 @@
 // forth.c
 
 #include "pico-hardware-camelforth.h"
-#define RECENT_STAMP      "Wed Apr 14 15:47:07 UTC 2021"
-#define COMMIT_TIME_STAMP "Wed Apr 14 14:43:13 UTC 2021"
+#define RECENT_STAMP      "Wed Apr 14 16:17:48 UTC 2021"
+#define COMMIT_TIME_STAMP "Wed Apr 14 15:47:56 UTC 2021"
 #define BRANCH_STAMP      "dvlp-aa                         0.1.7-pre-alpha"
-#define COMMIT_STAMP      "d8a8c4a" // seven characters
-#define FEATURE_STAMP     "+alltargets +blinkwait +feather      "
+#define COMMIT_STAMP      "54d46fd" // seven characters
+#define FEATURE_STAMP     "+alltargets +itsybitsy +blinkwait    "
 
 // towards addressible flash block writes
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
