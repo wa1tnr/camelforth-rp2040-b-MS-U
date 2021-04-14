@@ -7,7 +7,8 @@
 
 # example only - may be applied to any board.
 
-cmake .. -D"PICO_BOARD=adafruit_feather_rp2040" -D"BOOT2_GENERIC_CF_LOCAL=1"
+# cmake .. -D"PICO_BOARD=adafruit_feather_rp2040" -D"BOOT2_GENERIC_CF_LOCAL=1"
+cmake .. -D"PICO_BOARD=adafruit_feather_rp2040"
 
 exit 0 # do not continue.  Exits this script on all pathways through it.
 
