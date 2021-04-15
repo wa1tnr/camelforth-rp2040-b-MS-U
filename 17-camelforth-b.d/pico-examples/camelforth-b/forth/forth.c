@@ -2,12 +2,13 @@
 
 // #include "pico-hardware-camelforth.h"
 // #include "include/pico-hardware-camelforth.h"
+#define HW_CALLED_IN_FORTH_C
 #include "pico-hardware-camelforth.h"
-#define RECENT_STAMP      "Wed Apr 14 20:46:22 UTC 2021"
-#define COMMIT_TIME_STAMP "Wed Apr 14 20:02:27 UTC 2021"
-#define BRANCH_STAMP      "dvlp-aa--flash-sized-a-         0.1.7-pre-alpha"
-#define COMMIT_STAMP      "88bf977f" // seven characters
-#define FEATURE_STAMP     "+fl_sizing +alltargets +itsybitsy    "
+#define RECENT_STAMP      "Thu Apr 15 04:21:41 UTC 2021"
+#define COMMIT_TIME_STAMP "Thu Apr 15 03:54:09 UTC 2021"
+#define BRANCH_STAMP      "dvlp-aa--headers-               0.1.7-pre-alpha"
+#define COMMIT_STAMP      "8c9913e" // seven characters
+#define FEATURE_STAMP     "+headers +fl_sizing +alltargets      "
 
 // towards addressible flash block writes
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'

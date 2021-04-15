@@ -6,7 +6,9 @@
 //here
 
 #include "pico/stdlib.h"
-#include "pico-LED.h"
+#define HW_CALLED_IN_PICO_LED_C
+#include "pico-hardware-camelforth.h"
+// #include "pico-LED.h"
 
 void _pico_LED_init(void) {
     const uint LED_PIN = LED_PIN_MASTER; // pico_LED.h
