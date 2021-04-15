@@ -2,6 +2,7 @@
 
 // itsybitsy
 // https://github.com/adafruit/circuitpython/blob/main/ports/raspberrypi/boards/adafruit_itsybitsy_rp2040/pins.c#L32
+// boot2_w25q080
 #ifdef ADAFRUIT_ITSYBITSY_RP2040
 
     #ifndef LED_PIN_MASTER
