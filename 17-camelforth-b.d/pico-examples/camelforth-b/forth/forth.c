@@ -78,9 +78,9 @@ uint32_t getFlKey_counter = 0;
 unsigned int pstack[PSTACKSIZE];    /* grows down from end */
 unsigned int rstack[RSTACKSIZE];    /* grows down from end */
 
-volatile unsigned int *psp, *rsp;            /* stack pointers */
-volatile void *ip;                           /* interpreter pointer */
-volatile bool run;                           /* "run" flag */
+unsigned int *psp, *rsp;            /* stack pointers */
+void *ip;                           /* interpreter pointer */
+bool run;                           /* "run" flag */
 
 unsigned int lstack[LSTACKSIZE];    /* grows down from end */
 unsigned int uservars[USERSIZE];
@@ -1401,12 +1401,6 @@ THREAD(cold) = { Fenter,
 /*
  * INNER INTERPRETER
  */
-
-// list of stuff to try 'volatile' with:
-/*
-    xt w x are 'inside jobs' and don't get touched
-    psp rsp ip and run are from outside world and are candidates
-*/
 
 void interpreter(void)
 {
