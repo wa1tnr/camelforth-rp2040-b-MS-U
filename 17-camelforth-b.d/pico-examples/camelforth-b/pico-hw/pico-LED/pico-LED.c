@@ -34,7 +34,7 @@ int _pico_pip(void) {
 int _pico_LED(void) {
     const uint LED_PIN = LED_PIN_MASTER;
     gpio_put(LED_PIN, 1);
-    sleep_ms(2);
+    sleep_ms(BLINK_MS_CF); // 60 ms recent
     gpio_put(LED_PIN, 0);
     sleep_ms(500);
 }

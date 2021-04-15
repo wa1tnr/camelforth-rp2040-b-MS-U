@@ -1,18 +1,17 @@
 // forth.c
 
-// #include "pico-hardware-camelforth.h"
-// #include "include/pico-hardware-camelforth.h"
 #define HW_CALLED_IN_FORTH_C
 #include "pico-hardware-camelforth.h"
-#define RECENT_STAMP      "Thu Apr 15 04:21:41 UTC 2021"
-#define COMMIT_TIME_STAMP "Thu Apr 15 03:54:09 UTC 2021"
+
+#define RECENT_STAMP      "Thu Apr 15 15:04:35 UTC 2021"
+#define COMMIT_TIME_STAMP "Thu Apr 15 04:38:47 UTC 2021"
 #define BRANCH_STAMP      "dvlp-aa--headers-               0.1.7-pre-alpha"
-#define COMMIT_STAMP      "8c9913e" // seven characters
+#define COMMIT_STAMP      "a4f5395" // seven characters
 #define FEATURE_STAMP     "+headers +fl_sizing +alltargets      "
 
 // towards addressible flash block writes
 // still has rewind bug - may wish to call 'rewind' prior to 'COLD'
-// otherwise COLD behaves the old way.  Feature?
+// otherwise COLD behaves the old way.  Feature? yes, keep as feature.
 
 // #define MODE_STAMP "copy_to_ram"
 #define MODE_STAMP "copy_to_ram"
@@ -20,10 +19,6 @@
 // #define MODE_STAMP "no_flash   "
 #define VERS_CFORTH ("\103CamelForth in C v0.1 - 14 Feb 2016 - " COMMIT_TIME_STAMP "  ");
 #define DOFILLS_datus ("\n   " FEATURE_STAMP "  " CF_PICO_PLATFORM "\n   branch " BRANCH_STAMP " " COMMIT_STAMP "\n   " MODE_STAMP " mode                  "  RECENT_STAMP "\n\n");
-
-// special attempt: make some pointerish things more robust by
-// superstitiously using 'volatile' all over the place ;)
-// surprisingly, all these changes in this commit do compile cleanly.
 
 /****h* camelforth/forth.c
  * NAME
@@ -69,8 +64,6 @@
 // Rpi Pico RP2040 SDK:
 #include <stdio.h>
 #include "pico/stdio.h"
-// #include "pico/runtime.h"
-// #include "pico/stdlib.h"
 
 // original camelforth:
 #include <stdint.h>
@@ -89,12 +82,9 @@ uint32_t getFlKey_counter = 0;
 
 unsigned int pstack[PSTACKSIZE];    /* grows down from end */
 unsigned int rstack[RSTACKSIZE];    /* grows down from end */
-// interpreter():
-//  psp rsp ip and run are from outside world and are candidates
+
 volatile unsigned int *psp, *rsp;            /* stack pointers */
 volatile void *ip;                           /* interpreter pointer */
-// bool run;                           /* "run" flag */
-// wild attempt at a bugfix:
 volatile bool run;                           /* "run" flag */
 
 unsigned int lstack[LSTACKSIZE];    /* grows down from end */

@@ -17,7 +17,9 @@ uint8_t getKey(void) {     // hardware-independent wrapper
             count = 0;
             if (flip == -1) {
                 gpio_put(LED_PIN, 1);
-                sleep_ms(1);
+            //  for (volatile int i=2444; i>0; i--);
+                for (volatile int i=KB_PIP_LN; i>0; i--);
+                // sleep_ms(1);
                 gpio_put(LED_PIN, 0);
             }
          // if (flip ==  0) { gpio_put(LED_PIN, 0); }
