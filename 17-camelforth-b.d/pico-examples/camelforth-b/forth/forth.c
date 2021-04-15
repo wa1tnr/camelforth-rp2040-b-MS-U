@@ -1,5 +1,7 @@
 // forth.c
 
+// #include "pico-hardware-camelforth.h"
+// #include "include/pico-hardware-camelforth.h"
 #include "pico-hardware-camelforth.h"
 #define RECENT_STAMP      "Wed Apr 14 20:46:22 UTC 2021"
 #define COMMIT_TIME_STAMP "Wed Apr 14 20:02:27 UTC 2021"
