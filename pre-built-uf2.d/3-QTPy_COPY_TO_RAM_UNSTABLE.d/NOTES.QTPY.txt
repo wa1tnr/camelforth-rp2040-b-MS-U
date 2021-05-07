@@ -1,0 +1,14 @@
+Fri May  7 10:17:12 UTC 2021
+
+Built May 7th, first build 'ever'.
+
+Assumes A3 (aka GPIO26) has a red LED singleton connected;
+harmless to not do so.
+
+This is the expected blinkenlight for forth words such
+as 'pip' or 'blink'.
+
+QTPy does not have an onboard monochrome LED.  Instead, it
+has a NeoPixel WS2812B RGB LED (on GPIO12).
+
+Note that GPIO11 controls power to that RGB LED. ;)
