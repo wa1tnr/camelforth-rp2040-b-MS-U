@@ -39,6 +39,7 @@
 #include "itsy.h"
 #include "feather.h"
 #include "tiny2040.h"
+#include "qtpy.h"
 
 #ifndef CF_PICO_PLATFORM
     #warning -7777 // pico-hardware-camelforth.h
