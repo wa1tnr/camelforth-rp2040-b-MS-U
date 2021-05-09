@@ -14,8 +14,8 @@
 
     #ifndef CF_PICO_PLATFORM
         #define CF_PICO_PLATFORM "Adafruit QT Py RP2040    "
-        #define FLASH_LIMIT 0x3FFFFF // says 8 MB here and there - not sure
-        #define FLASH_MASK  0x3FF000
+        #define FLASH_LIMIT 0x7FFFFF // says 8 MB here and there - not sure
+        #define FLASH_MASK  0x7FF000
     #endif
 
 #endif
