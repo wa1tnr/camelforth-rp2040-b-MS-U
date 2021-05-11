@@ -6,6 +6,8 @@
 
     #ifndef LED_PIN_MASTER
         #define LED_PIN_MASTER 25;
+        #define NPX_PIN 19 // arbitrary external WS2812
+        #define NPX_PWR_PIN -1
         #define PIP_LENGTH 4777 // untested
         #define KB_PIP_LN  2444
         #define BLINK_MS_CF 60
