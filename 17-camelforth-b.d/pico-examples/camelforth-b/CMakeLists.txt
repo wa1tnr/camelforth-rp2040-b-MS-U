@@ -10,7 +10,8 @@ target_compile_definitions(camelforth-b PRIVATE
     # NO_FLASH_CMAKE=-1
 )
 
-target_link_libraries(camelforth-b forth pico-LED hardware_flash pico_stdlib)
+# 11 May 00:40z trying PRIVATE on line below first time ever
+target_link_libraries(camelforth-b PRIVATE forth pico-LED ws2812 hardware_flash pico_stdlib)
 
 # pico_set_binary_type(camelforth-b copy_to_ram)
 pico_set_binary_type(camelforth-b copy_to_ram)
@@ -30,3 +31,4 @@ endif()
 
 add_subdirectory(forth)
 add_subdirectory(pico-hw)
+add_subdirectory(pio)
