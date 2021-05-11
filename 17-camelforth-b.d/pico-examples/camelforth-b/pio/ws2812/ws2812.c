@@ -12,6 +12,7 @@
 // #include "hardware/clocks.h"
 // #include "ws2812.pio.h"
 #include "generated/ws2812.pio.h"
+#include "pico-hardware-camelforth.h" // NPX_PIN defined
 
 static inline void put_pixel(uint32_t pixel_grb) {
     pio_sm_put_blocking(pio0, 0, pixel_grb << 8u);
@@ -79,7 +80,7 @@ const struct {
 
 // QTPY NEOPIX is 12
 // const int PIN_TX = 12; // was 0;
-const int PIN_TX = 16; // feather rp2040 GPIO16 NEOPIX
+const int PIN_TX = NPX_PIN; // 16 // feather rp2040 GPIO16 NEOPIX
 // const int PIN_TX = 17; // was 0;
 
 extern void _pico_RGB_init(void);
@@ -88,7 +89,7 @@ int _this_ws2812() {
     //set_sys_clock_48();
     stdio_init_all();
     // puts("   WS2812 Smoke Test R 001a");
-    printf("   WS2812 Smoke Test Rev 001b   klixu     ");
+    printf("   WS2812 Smoke Test Rev 001e   nscrt     ");
      _pico_RGB_init();
 
     // todo get free sm
