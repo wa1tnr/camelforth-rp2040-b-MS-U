@@ -1,0 +1,19 @@
+Tue May 11 19:42:50 UTC 2021
+
+Should have NeoPixel support and a recent timestamp.
+
+'reflash' works.
+
+For QTPY RP2040
+
+Target presently not responding after this program
+is uploaded, run once, then target is powered off
+(by removing the USB-C cable plug from the Linux
+host PC).
+
+ $ git show
+
+commit 47d15edc7f7f440e264a7d46373cc164a11ffed2
+Author: wa1tnr <wa1tnr@users.noreply.github.com>
+Date:   Tue May 11 19:04:26 2021 +0000
+
