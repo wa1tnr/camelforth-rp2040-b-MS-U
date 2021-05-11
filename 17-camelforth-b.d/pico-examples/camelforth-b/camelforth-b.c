@@ -72,8 +72,8 @@ int main(void) {
     for (int i=3;i>0;i--) _pico_LED();
     // stale message text follows - poorly maintained.
     // poor testing of latest edits - may cause issues.  However, brief test seemed okay.
-    uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\r\n\r\n");
-    printf(              "\n   camelforth-rp2040-b-MS-U r0.1.7-pre-alpha\n\n");
+    uart_puts(UART_ID, "\r\n   camelforth-rp2040-b-MS-U r0.1.8-pre-alpha\r\n\r\n");
+    printf(              "\n   camelforth-rp2040-b-MS-U r0.1.8-pre-alpha\n\n");
 
     uart_puts(UART_ID, "        +fl_sizing +alltargets +itsybitsy +blinkwait +feather\r\n");
     printf(            "        +fl_sizing +alltargets +itsybitsy +blinkwait +feather\n");
