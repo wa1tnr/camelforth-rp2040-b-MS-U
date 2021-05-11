@@ -31,6 +31,7 @@ const uint8_t *flash_target_contents_b = (const uint8_t *) (XIP_BASE + FLASH_TAR
 #define UART_TX_PIN 0
 #define UART_RX_PIN 1
 extern void interpreter(void);
+extern int _this_ws2812();
 extern void crufty_printer(void);
 
 extern void _pico_LED_init(void);
@@ -85,6 +86,9 @@ int main(void) {
 
     crufty_printer(); // examine ram with this nonsense function
 
+    int result = _this_ws2812(); // do a NEOPIX thing here
+
+    printf( "   NEOPIX activity here\n\n");
 
 // kludge: bug with flash access in no_flash binary compile (see CMakeLists.txt for the toggle)
 // #undef NO_FLASH_CMAKE
@@ -92,6 +96,13 @@ int main(void) {
     flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
     printf("   flash_range_erase is required (and completed).\n\n");
 #endif
+
+#define WANT_FORCED_ERASE_QTPY
+#undef WANT_FORCED_ERASE_QTPY
+#ifdef WANT_FORCED_ERASE_QTPY
+    flash_range_erase(FLASH_TARGET_OFFSET_B, FLASH_SECTOR_SIZE);
+    printf("   flash_range_erase is required (and completed).\n\n");
+#endif // #ifdef WANT_FORCED_ERASE_QTPY
 
     uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET_B ;
     // printf("%s", "\n\n       start_address: ");
