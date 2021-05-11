@@ -1,0 +1,56 @@
+Summary: change flash SPI clock divisor from 2 to 4
+ - target will then respond as expected.
+
+Otherwise, won't survive a power cycle - target
+won't present the CDC/ACM interface (via USB)
+to the host PC without this work-around (at
+least, not on the reference system used
+locally).
+
+Branch 'develop' was locally modified to this end.
+
+ $  git branch -avv | grep tnr
+* local_tnr_qtpy-a   9396b9c Fix a bunch of doxygen typos (#391)
+
+ $ pwd
+/some/path/to/camelforth-rp2040-b-MS-U/17-camelforth-b.d/pico-sdk
+
+ $ git branch -avv | grep 9396
+  develop                   9396b9c [origin/develop] Fix a bunch of doxygen typos (#391)
+* local_tnr_qtpy-a          9396b9c Fix a bunch of doxygen typos (#391)
+  remotes/origin/develop    9396b9c Fix a bunch of doxygen typos (#391)
+
+ -----------------------------------
+  -#define PICO_FLASH_SPI_CLKDIV 2
+  +#define PICO_FLASH_SPI_CLKDIV 4
+ -----------------------------------
+
+Details
+
+ $ pwd
+/some/path/to/camelforth-rp2040-b-MS-U/pre-built-uf2.d/3-QTPy_COPY_TO_RAM_UNSTABLE.d/rev-c.d
+
+ $ date
+Tue May 11 21:23:01 UTC 2021
+
+ $ pwd
+/home/chris/Git/camelforth-rp2040-b-MS-U/17-camelforth-b.d/pico-sdk/src/boards/include/boards
+
+ $ git diff adafruit_qtpy_rp2040.h
+diff --git a/src/boards/include/boards/adafruit_qtpy_rp2040.h b/src/boards/include/boards/adafruit_qtpy_rp2040.h
+index e3384fb..9b6496b 100644
+--- a/src/boards/include/boards/adafruit_qtpy_rp2040.h
++++ b/src/boards/include/boards/adafruit_qtpy_rp2040.h
+@@ -75,7 +75,7 @@
+ #define PICO_BOOT_STAGE2_CHOOSE_W25Q080 1
+ 
+ #ifndef PICO_FLASH_SPI_CLKDIV
+-#define PICO_FLASH_SPI_CLKDIV 2
++#define PICO_FLASH_SPI_CLKDIV 4
+ #endif
+ 
+ #ifndef PICO_FLASH_SIZE_BYTES
+
+ $ echo;echo END.
+
+END.
