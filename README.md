@@ -4,6 +4,9 @@ CamelForth in C, by Dr. Brad Rodriguez
 
 UNSTABLE version - with mass storage support QSPI flashROM
 
+NEOPIX support added (pio) 11 May.
+Feather target configured for that. Edit source for others.
+
 Stores forth source code in QSPI flash, and plays it
 back during COLD (player piano).
 
