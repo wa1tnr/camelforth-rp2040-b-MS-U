@@ -1,0 +1,34 @@
+Wed May 12 21:10:41 UTC 2021
+
+During recent testing, came up with a quick implementation of E5 in the SDK errata.
+
+(Errata RP2040-E5 in the RP2040 datasheet)
+
+This, is that implementation.
+
+The only lines that matter in the .c file are:
+
+#include "pico/fix/rp2040_usb_device_enumeration.h"
+extern void rp2040_usb_device_enumeration_fix(void);
+int main(void) {
+    stdio_init_all();
+    sleep_ms(1200);
+    rp2040_usb_device_enumeration_fix();
+
+    .
+    .
+
+Not sure which changes to CMakeLists.txt were relevant.
+
+This is likely to be mandatory:
+
+target_link_libraries(camelforth-b PRIVATE forth pico-LED ws2812 hardware_flash pico_fix_rp2040_usb_device_enumeration pico_stdlib)
+
+Presented in multi-line style (may not be legal syntax):
+
+target_link_libraries(camelforth-b PRIVATE forth \
+   pico-LED ws2812 hardware_flash \
+   pico_fix_rp2040_usb_device_enumeration \
+   pico_stdlib)
+
+END.
