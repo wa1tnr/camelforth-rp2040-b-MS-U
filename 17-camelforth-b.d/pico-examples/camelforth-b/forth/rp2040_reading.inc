@@ -6,6 +6,8 @@
 
 // #define READING_SIZE 1024
 #define READING_SIZE 4096
+#warning kludge alert rp2040_reading.inc NEWLINE defined second time - harmless at present
+#define NEWLINE 0x0d // kludge! forth.c defines this
 
 char buffer[READING_SIZE];
 
@@ -45,7 +47,8 @@ CODE(reading) {
             (ch_test == '\010') || // backspace 0x08
             (ch_test == '\033') || // escape    0x1B // escape: beneficially premature EOF marker
             (ch_test == '\t') ||   // tab       0x09
-            (ch_test == '\n')      // newline   0x0A
+            // (ch_test == '\n')      // newline   0x0A
+            (ch_test == NEWLINE)      // newline   0x0A
         )
        ) { // marker CCEC
         if (ch_read == '\033') {

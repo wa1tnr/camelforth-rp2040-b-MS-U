@@ -38,13 +38,18 @@ extern void _pico_LED_init(void);
 extern void _pico_pip(void);
 extern int _pico_LED(void);
 
+#define CF_WANTS_CDC_ACTIVE_DURING_START_UP
+#undef  CF_WANTS_CDC_ACTIVE_DURING_START_UP
+
 void _loop_delay_local(void) {
+// #ifdef CF_WANTS_CDC_ACTIVE_DURING_START_UP
     if (tud_cdc_n_connected (0)) return;
     for (volatile int i=288;i>0;i--) { // 144 okay
         for (volatile int j=455555;j>0;j--) {
         }
         if (tud_cdc_n_connected (0)) return;
     }
+// #endif // #ifdef CF_WANTS_CDC_ACTIVE_DURING_START_UP
 }
 
 void blink_loop(void) {
@@ -66,9 +71,11 @@ int main(void) {
     sleep_ms(800);
     // if bool     tud_cdc_n_connected       (uint8_t itf);
     _pico_LED_init();
+#ifdef CF_WANTS_CDC_ACTIVE_DURING_START_UP
     while (! tud_cdc_n_connected (0)) {
         blink_loop(); // no while - done only once
     }
+#endif // #ifdef CF_WANTS_CDC_ACTIVE_DURING_START_UP
     for (int i=3;i>0;i--) _pico_LED();
     // stale message text follows - poorly maintained.
     // poor testing of latest edits - may cause issues.  However, brief test seemed okay.
