@@ -1,0 +1,17 @@
+Fri May 21 15:04:18 UTC 2021
+
+Nominal - works okay.
+
+src/rp2_common/hardware_xosc/xosc.c b/src/rp2_common/hardware_xosc/xosc.c
+
+startup_delay * 64 - all targets
+
+Only qtpy target got a SPI clock DIV change (from 2 to 4).
+
+Feather (including this very UF2 in this directory)
+already has that (SPI clock DIV of 4 not 2).
+
+ $   cat ../../../17-camelforth-b.d/pico-sdk/src/boards/include/boards/adafruit_feather_rp2040.h  | grep DIV
+#ifndef PICO_FLASH_SPI_CLKDIV
+#define PICO_FLASH_SPI_CLKDIV 4
+
