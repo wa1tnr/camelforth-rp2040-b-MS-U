@@ -53,3 +53,19 @@ here:
 
  [ https://forums.adafruit.com/viewtopic.php?f=60&t=178640&p=873715#p873709 ]
 
+
+ $  pwd ; echo; grep _CLKDIV adafruit*.h
+/some/path/to/camelforth-rp2040-b-MS-U/17-camelforth-b.d/pico-sdk/src/boards/include/boards
+
+adafruit_feather_rp2040.h:#ifndef PICO_FLASH_SPI_CLKDIV
+adafruit_feather_rp2040.h:#define PICO_FLASH_SPI_CLKDIV 4
+
+adafruit_itsybitsy_rp2040.h:#ifndef PICO_FLASH_SPI_CLKDIV
+adafruit_itsybitsy_rp2040.h:#define PICO_FLASH_SPI_CLKDIV 2
+
+adafruit_qtpy_rp2040.h:#ifndef PICO_FLASH_SPI_CLKDIV
+adafruit_qtpy_rp2040.h:#define PICO_FLASH_SPI_CLKDIV 4
+
+So the ItsyBitsy is still on a CLKDIV of 2! (and it seems to work).
+
+Fri May 21 15:50:03 UTC 2021
