@@ -1,0 +1,59 @@
+ $  git show | cat ; /bin/pwd
+commit a32d614b43bee74a51bc39241179472e581b9802
+Author: Rafael G. Martins <rafael@rafaelmartins.eng.br>
+Date:   Wed May 19 01:05:35 2021 +0200
+
+    pioasm: prevent double inclusion for C SDK generated headers (#417)
+
+/some/path/to/camelforth-rp2040-b-MS-U/17-camelforth-b.d/pico-sdk
+
+ $  git branch -avv | egrep develop
+* develop  a32d614 [origin/develop] pioasm: prevent double inclusion for C SDK generated headers (#417)
+
+The above says that 'git update ; git pull' brought in the changes
+to (repos. pico-sdk) branch 'develop' on 21 May (or earlier) and
+that branch 'develop' is being used to build CamelForth (today).
+
+Two changes to pico-sdk anticipated for testing.
+
+ $  git diff adafruit_qtpy_rp2040.h
+diff --git a/src/boards/include/boards/adafruit_qtpy_rp2040.h b/src/boards/include/boards/adafruit_qtpy_rp2040.h
+index e3384fb..9b6496b 100644
+--- a/src/boards/include/boards/adafruit_qtpy_rp2040.h
++++ b/src/boards/include/boards/adafruit_qtpy_rp2040.h
+@@ -75,7 +75,7 @@
+ #define PICO_BOOT_STAGE2_CHOOSE_W25Q080 1
+ 
+ #ifndef PICO_FLASH_SPI_CLKDIV
+-#define PICO_FLASH_SPI_CLKDIV 2
++#define PICO_FLASH_SPI_CLKDIV 4
+ #endif
+ 
+ #ifndef PICO_FLASH_SIZE_BYTES
+
+
+That's the first change from pico-sdk branch 'develop' commit a32d614b4.
+
+The second change looks like this:
+
+ $  git diff xosc.c
+diff --git a/src/rp2_common/hardware_xosc/xosc.c b/src/rp2_common/hardware_xosc/xosc.c
+index 098f672..9e43723 100644
+--- a/src/rp2_common/hardware_xosc/xosc.c
++++ b/src/rp2_common/hardware_xosc/xosc.c
+@@ -20,7 +20,7 @@ void xosc_init(void) {
+ 
+     // Set xosc startup delay
+     uint32_t startup_delay = (((12 * MHZ) / 1000) + 128) / 256;
+-    xosc_hw->startup = startup_delay;
++    xosc_hw->startup = startup_delay * 64;
+ 
+     // Set the enable bit now that we have set freq range and startup delay
+     hw_set_bits(&xosc_hw->ctrl, XOSC_CTRL_ENABLE_VALUE_ENABLE << XOSC_CTRL_ENABLE_LSB);
+ $ 
+
+The source of this second change is a post by @danh on Adafruit Forum,
+here:
+
+ [ https://forums.adafruit.com/viewtopic.php?f=60&t=178640&p=873715#p873709 ]
+
