@@ -1,0 +1,1 @@
+d880bc244e1026ce9a3986bb87ce1fed  camelforth-b--12-may-211808-1f700c1-copy_to_ram.uf2
