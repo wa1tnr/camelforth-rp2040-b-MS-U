@@ -1,0 +1,15 @@
+Wed  4 May 14:45:35 UTC 2022
+
+ $  diff run_cmake_pico.sh  working_copy_run_cmake_pico.sh
+11c11
+< export SOME_BIN_DIR=$PRIVATE
+---
+> export SOME_BIN_DIR=$HOME/this/dir/bin
+13,14c13,14
+< # cmake .. -D"PICO_BOARD=pico" -D"PICO_TOOLCHAIN_PATH=$SOME_BIN_DIR"
+< cmake .. -D"PICO_BOARD=pico"
+---
+> cmake .. -D"PICO_BOARD=pico" -D"PICO_TOOLCHAIN_PATH=$SOME_BIN_DIR"
+> # cmake .. -D"PICO_BOARD=pico"
+
+END.
