@@ -7,9 +7,22 @@
 
 # example only - may be applied to any board.
 
+export PICO_SDK_PATH=../../pico-sdk
+export SOME_BIN_DIR=$PRIVATE
+
+# cmake .. -D"PICO_BOARD=pico" -D"PICO_TOOLCHAIN_PATH=$SOME_BIN_DIR"
 cmake .. -D"PICO_BOARD=pico"
 
 exit 0 # do not continue.  Exits this script on all pathways through it.
+
+# #############  REAL PATHS  ###################
+#
+#   diff for real paths 04 May 2022:
+#   < export SOME_BIN_DIR=$PRIVATE
+#   ---
+#   > export SOME_BIN_DIR=$HOME/this/dir/bin
+#
+# ##############################################
 
 # the 'exit 0' protects this code from being executed:
 
