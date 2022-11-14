@@ -11,8 +11,36 @@ Stores forth source code in QSPI flash, and plays it
 back during COLD (player piano).
 
 # NEWS
+## 4 November 2022 - inquiry received
 
-14 April 2021 - three targets supported.
+
+> Begin forwarded message:
+
+> Date: Mon, 14 Nov 2022 15:03:24 +0000
+> From: D.V.
+> Subject: [CamelForth] Camelforth for Pico
+
+> Wondering whether the implementor will continue to develop the Pico implementation and/or 'entertain' questions about the implementation.
+
+> I didn't see any contact information on this site or the 'github' material.  Thank you!
+
+The one open issue already invites contact through the issue mechanism.
+
+Work is only done on this repository when a specific operational
+difficulty arises, such as an update to pico-sdk that changes
+how (or if) the program continues to compile correctly.
+
+Not noticed ordinarily, as the project is essentially mothballed.
+
+In its current state it should be able to read and write to
+on-board (external, QSPI) flashROM 'raw'.  This amounts to a
+player piano situation; it plays back the Forth source code
+(in ascii representation, as with any ascii plaintext file)
+.. upon a cold boot.
+
+Which, in turn, amounts to an extended Forth dictionary.
+
+## 14 April 2021 - three targets supported.
 
 RPi Pico RP2040, Adafruit Feather and ItsyBitsy RP2040
 (three targets) all supported.
