@@ -16,15 +16,17 @@ back during COLD (player piano).
 
 > Begin forwarded message:
 
-> Date: Mon, 14 Nov 2022 15:03:24 +0000
-> From: D.V.
-> Subject: [CamelForth] Camelforth for Pico
+&gt; Date: Mon, 14 Nov 2022 15:03:24 +0000 
 
-> Wondering whether the implementor will continue to develop the Pico implementation and/or 'entertain' questions about the implementation.
+&gt; From: D.V. 
 
-> I didn't see any contact information on this site or the 'github' material.  Thank you!
+&gt; Subject: [CamelForth] Camelforth for Pico 
 
-The one open issue already invites contact through the issue mechanism.
+>&gt; Wondering whether the implementor will continue to develop the Pico implementation and/or 'entertain' questions about the implementation.
+
+>&gt; I didn't see any contact information on this site or the 'github' material.  Thank you!
+
+The one open [issue](https://github.com/wa1tnr/camelforth-rp2040-b-MS-U/issues/2) already invites contact through the issue mechanism.
 
 Work is only done on this repository when a specific operational
 difficulty arises, such as an update to pico-sdk that changes
