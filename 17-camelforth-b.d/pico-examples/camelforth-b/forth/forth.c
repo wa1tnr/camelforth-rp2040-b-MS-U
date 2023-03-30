@@ -717,6 +717,11 @@ CODE(rewind) { // reset flash loader to the base of that sector
     getFlKey_counter = 0;
 }
 
+extern void asmword(void);
+CODE(asmword) { /* -- */
+    asmword();
+}
+
 CODE(bye) {
     run = 0;
 }
@@ -825,6 +830,7 @@ PRIMITIVE(buf2flash);
 PRIMITIVE(rewind);
 PRIMITIVE(erase);
 PRIMITIVE(reading);
+PRIMITIVE(asmword);
 PRIMITIVE(bye);
 
 /* USER VARIABLES */
@@ -1710,4 +1716,5 @@ HEADER(rewind, reading, 0, "\006rewind");
 HEADER(flkey, rewind, 0, "\005flkey");
 HEADER(flaccept, flkey, 0, "\010flaccept");
 HEADER(flquit, flaccept, 0, "\006flquit");
-HEADER(cold, flquit, 0, "\004COLD");
+HEADER(asmword, flquit, 0, "\007asmword");
+HEADER(cold, asmword, 0, "\004COLD");
