@@ -6,17 +6,16 @@ add_executable(camelforth-b
 
 target_compile_definitions(camelforth-b PRIVATE
     # enable this flag only for no_flash compile:
-    # NO_FLASH_CMAKE=-1
+    NO_FLASH_CMAKE=-1
     # NO_FLASH_CMAKE=-1
 )
 
-# 11 May 00:40z trying PRIVATE on line below first time ever
-target_link_libraries(camelforth-b PRIVATE forth pico-LED ws2812 hardware_flash pico_stdlib)
+target_link_libraries(camelforth-b PRIVATE forth pico-LED asmword ws2812 hardware_flash pico_stdlib)
 
 # pico_set_binary_type(camelforth-b copy_to_ram)
-pico_set_binary_type(camelforth-b copy_to_ram)
+# pico_set_binary_type(camelforth-b copy_to_ram)
 # pico_set_binary_type(camelforth-b no_flash)
-# pico_set_binary_type(camelforth-b no_flash)
+pico_set_binary_type(camelforth-b no_flash)
 
 pico_enable_stdio_usb(camelforth-b 1)
 pico_enable_stdio_uart(camelforth-b 1) # was zero
@@ -32,3 +31,4 @@ endif()
 add_subdirectory(forth)
 add_subdirectory(pico-hw)
 add_subdirectory(pio)
+add_subdirectory(asm)
