@@ -151,11 +151,15 @@ toggle_gpio25:
 
 blinking:
    push  {lr}
+   push  {r2}
+   push  {r3}
    bl    toggle_gpio25
-   bl    toggle_gpio25
+   @ bl    toggle_gpio25
    bl    led_delayed
    bl    toggle_gpio09
    bl    led_delayed
+   pop   {r3}
+   pop   {r2}
    pop   {pc}
 
 gpio25_lit:
@@ -211,13 +215,36 @@ traploop:
 1: bl    blinking
    bne   1b
 
+.equ LOOPING, 32
+
+runasm:
+   push  {lr}
+   movs  r2, #1
+   movs  r3, #1
+1: push  {r2}
+   push  {r3}
+   bl    blinking
+   pop   {r3}
+   pop   {r2}
+   add    r3, r2
+   cmp    r3, #LOOPING
+   bne    1b
+   pop   {pc}
+
 @  --------------------   main   ------------------    
 
 experiment_a_asm:
+   push  {lr}
    bl    program_setup
    bl    gpio09_lit
    bl    toggle_gpio25
-   b     traploop
+   bl    runasm
+   pop   {pc}
+
+   @ don't know how to terminate
+   @ pop   {pc}
+
+   @ b     traploop
 
 @ Set data alignment
 .data
