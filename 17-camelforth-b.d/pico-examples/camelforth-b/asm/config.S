@@ -1,8 +1,8 @@
-@ Thu 30 Mar 22:11:51 UTC 2023
+@ Sat  1 Apr 21:03:00 UTC 2023
 
 @ config.S
 
-@ https://wokwi.com/projects/360645588605043713
+@ https://wokwi.com/
 
 @ not the user interface:
 .if (toggle_flash_vs_buzz == 1)
@@ -15,14 +15,13 @@
 .equ it_flashes, 0
 .endif
 
+
 .if (it_buzzes == 1)
-  .equ ITERATIONS          ,  8
-  .equ TRIMMED_ITER        ,  4
+  .equ COUNT               ,  0x00020000
 .endif
 
 .if (it_flashes == 1)
-  .equ ITERATIONS          ,  32
-  .equ TRIMMED_ITER        ,  8
+  .equ COUNT               ,  0x00f00000
 .endif
 
 @ end.
