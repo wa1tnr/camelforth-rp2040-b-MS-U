@@ -1,6 +1,10 @@
 @ asmword.S
 
-@ Sat  1 Apr 22:38:23 UTC 2023
+@ Sun  2 Apr 21:09:45 UTC 2023
+
+@ pry-points (mecrisp though)
+@   tos .req r6
+@   str tos, [psp]
 
 @ https://wokwi.com/
 
@@ -60,36 +64,34 @@ blinking:
    str    r0, [r1, #GPIO_OUT_XOR]
    ldr    r3, =COUNT
 
-decrement:
-   subs   r3, #1
-   bne    decrement
+1: subs   r3, #1
+   bne    1b
    pop    {pc}
 
 .equ BLINKS, 3 + 1
 .equ BLINK_TOGGLES, BLINKS * 2
 
 run_program:
-   nop
-
-led_on:
+   push   {lr}
    ldr    r1, =SIO_BASE
    ldr    r0, =1<<LED_ALT_PIN
    str    r0, [r1, #GPIO_OUT_SET]
 
-   @ b led_on
+   movs   r2, #1
+   movs   r3, #1
 
-   push  {lr}
-   movs  r2, #1
-   movs  r3, #1
-1: push  {r2}
+2: push  {r2}
    push  {r3}
+
    bl    blinking
+
    pop   {r3}
    pop   {r2}
+
    add    r3, r2
    cmp    r3, #BLINK_TOGGLES
-   bne    1b
-   pop   {pc}
+   bne    2b
+   pop    {pc}
 
 @  --------------------   main   ------------------    
 
