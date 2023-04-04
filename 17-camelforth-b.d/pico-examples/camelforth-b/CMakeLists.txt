@@ -1,3 +1,4 @@
+add_compile_options(-Werror -Wall -Wextra -Wnull-dereference)
 add_executable(camelforth-b
         camelforth-b.c
         )
