@@ -2,27 +2,24 @@
 
 #ifndef NOT_WOKWI
 #define HAVE_FOUND_WOKWI_ENVIRONMENT
+#warning this is very much wokwi
 #endif
 
 #ifdef NOT_WOKWI
 #define HAVE_FOUND_NON_WOKWI_ENVIRONMENT
+#warning this is not wokwi
 #endif
 
-#define PBLINKS 8 // how many blinks?
+#define PBLINKS 17 // how many blinks?
 #include "hardware/gpio.h"
 
 #ifdef HAVE_FOUND_WOKWI_ENVIRONMENT
+#warning this is very much wokwi
 #include <Arduino.h>
 #endif
 
-
-// Thu 30 Mar 21:32:55 UTC 2023
-
-// @ https://wokwi.com/projects/360645588605043713
-
-#define PBLINKS 17 // how many blinks?
-
-#include "hardware/gpio.h"
+// pbblinks here also
+// gpio.h here also
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,7 +31,17 @@ void experiment_a_asm();
 }
 #endif
 
+
+
+#ifdef HAVE_FOUND_WOKWI_ENVIRONMENT
+#warning this setup function header
+void setup(void) {
+#endif
+
+#ifdef HAVE_FOUND_NON_WOKWI_ENVIRONMENT
+#warning this is  not wokwi asmword function header
 void asmword(void) {
+#endif
 
     static volatile int c; // not volatile static as it was, prior
     c = (PBLINKS * 2) + 2;
@@ -43,9 +50,8 @@ void asmword(void) {
     return experiment_a_asm(c, ram);
 }
 
-// END.
-
 #ifdef HAVE_FOUND_WOKWI_ENVIRONMENT
+#warning this is very much wokwi
 void loop() {
     while(-1);
 }
