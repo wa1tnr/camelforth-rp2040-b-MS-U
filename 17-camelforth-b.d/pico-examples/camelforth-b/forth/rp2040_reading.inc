@@ -15,7 +15,7 @@ CODE(reading) {
     uint8_t ch_read, ch_test;
     --psp; psp[0] = (uint32_t) location; // push location
     int count=0;
-    int flip, flop;
+    int flip;
     const uint LED_PIN = 25;
     flip=-1;
     for (int i = (READING_SIZE - 1) ; i > 0 ; i--) { // marker BBFB
