@@ -1,10 +1,7 @@
 @ asmword.S
 
-@ Tue  4 Apr 00:47:42 UTC 2023
-@ https://wokwi.com/projects/361032496739761153
-
-@ old:
-@ https://wokwi.com/projects/361032112467047425
+@ Tue  4 Apr 22:46:29 UTC 2023
+@ https://wokwi.com/projects/361118569420274689
 
 @ pry-points (mecrisp though)
 @   tos .req r6
@@ -21,7 +18,25 @@
 
 
 @ - - - - -   program constants   - - - - -
+
+
+#ifndef NOT_WOKWI
+#define HAVE_FOUND_WOKWI_ASM_ENVIRONMENT
+#endif
+
+#ifdef NOT_WOKWI
+#define HAVE_FOUND_NON_WOKWI_ASM_ENVIRONMENT
+#endif
+
+
+#ifdef HAVE_FOUND_WOKWI_ASM_ENVIRONMENT
+.equ LED_ALT_PIN         , 9 @ 25 @ 9
+#endif
+
+#ifdef HAVE_FOUND_NON_WOKWI_ASM_ENVIRONMENT
 .equ LED_ALT_PIN         , 25 @ 9
+#endif
+
 .equ BLINKS              , 3 + 1
 .equ BLINK_TOGGLES       , BLINKS * 2
 

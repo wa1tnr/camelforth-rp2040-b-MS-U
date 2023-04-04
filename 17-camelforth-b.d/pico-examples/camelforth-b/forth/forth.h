@@ -80,7 +80,8 @@ struct Header {
 #define IMMEDIATE 1         /* immediate bit in flags */
 
 // #define CODE(name)       void F##name ( __attribute__((unused)) void * pfa)
-#define CODE(name)       void F##name (void * pfa)
+#define CODE(name)       void F##name ( __attribute__((unused)) void * pfa)
+// #define CODE(name)       void F##name (void * pfa)
 #define PRIMITIVE(name)  void * T##name[] = { F##name }
 #define THREAD(name)     void * T##name[]
 #define OFFSET(n)   (void *)(n*CELL)       /* see CELL above, = 4 */
