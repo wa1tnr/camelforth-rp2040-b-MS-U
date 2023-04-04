@@ -1,4 +1,5 @@
 // cloop.c
+// Tue  4 Apr 22:35:15 UTC 2023
 
 #ifndef NOT_WOKWI
 #define HAVE_FOUND_WOKWI_ENVIRONMENT
@@ -17,9 +18,6 @@
 #warning this is very much wokwi
 #include <Arduino.h>
 #endif
-
-// pbblinks here also
-// gpio.h here also
 
 #ifdef __cplusplus
 extern "C" {
