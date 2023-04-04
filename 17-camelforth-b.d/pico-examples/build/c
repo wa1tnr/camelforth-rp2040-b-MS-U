@@ -1,0 +1,19 @@
+#!/bin/sh
+
+sh ./cleaner.sh
+sh ./dothis_rp2040_pico.sh
+
+# run_cmake_feather.sh
+# run_cmake_itsyrp2040.sh
+# run_cmake_pico.sh
+# run_cmake_qtpyrp2040.sh
+
+cd camelforth-b
+
+# date
+
+make
+
+# date
+
+# END.
