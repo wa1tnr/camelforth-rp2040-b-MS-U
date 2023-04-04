@@ -6,7 +6,7 @@
 
 #include "pico/stdlib.h"
 
-int _pico_LED() {
+// void _pico_LED(void) {
 
 #undef CFORTH_LED
 
