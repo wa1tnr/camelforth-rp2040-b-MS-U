@@ -23,7 +23,7 @@ void _sht_sleep(void) {
 */
 extern void _sht_sleep(void); // pico-LED.h
 
-int _pico_pip(void) {
+void _pico_pip(void) {
     const uint LED_PIN = LED_PIN_MASTER;
     gpio_put(LED_PIN, 1);
     _sht_sleep();
@@ -31,7 +31,7 @@ int _pico_pip(void) {
     sleep_ms(11);
 }
 
-int _pico_LED(void) {
+void _pico_LED(void) {
     const uint LED_PIN = LED_PIN_MASTER;
     gpio_put(LED_PIN, 1);
     sleep_ms(BLINK_MS_CF); // 60 ms recent
