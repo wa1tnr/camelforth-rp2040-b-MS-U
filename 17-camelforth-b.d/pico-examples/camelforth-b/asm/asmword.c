@@ -35,6 +35,7 @@ void experiment_a_asm();
 #endif
 
 void asmword(void) {
+
     static volatile int c; // not volatile static as it was, prior
     c = (PBLINKS * 2) + 2;
     char *ram;
@@ -43,4 +44,11 @@ void asmword(void) {
 }
 
 // END.
+
+#ifdef HAVE_FOUND_WOKWI_ENVIRONMENT
+void loop() {
+    while(-1);
+}
+#endif
+
 // END.
