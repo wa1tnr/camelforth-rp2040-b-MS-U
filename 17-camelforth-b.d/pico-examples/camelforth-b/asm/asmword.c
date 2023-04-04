@@ -19,7 +19,7 @@ void experiment_a_asm();
 #endif
 
 void asmword(void) {
-    volatile static int c;
+    static volatile int c; // not volatile static as it was, prior
     c = (PBLINKS * 2) + 2;
     char *ram;
     ram = (char *) c;
