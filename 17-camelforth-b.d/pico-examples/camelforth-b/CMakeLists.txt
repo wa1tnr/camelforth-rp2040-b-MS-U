@@ -1,4 +1,6 @@
-add_compile_options(-Werror -Wall -Wextra -Wnull-dereference)
+# add_compile_options(-DNOT_WOKWI -v -Werror -Wall -Wextra -Wnull-dereference -fmax-errors=8)
+# add_compile_options(-DNOT_WOKWI -v -Wall -Wextra -Wnull-dereference -fmax-errors=8)
+add_compile_options(-DNOT_WOKWI    -Wall -Wextra -Wnull-dereference -fmax-errors=8)
 add_executable(camelforth-b
         camelforth-b.c
         )
