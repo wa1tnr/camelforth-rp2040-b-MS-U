@@ -85,7 +85,7 @@ const int PIN_TX = NPX_PIN; // 16 // feather rp2040 GPIO16 NEOPIX
 
 extern void _pico_RGB_init(void);
 
-int _this_ws2812() {
+void _this_ws2812() {
     //set_sys_clock_48();
     stdio_init_all();
     // puts("   WS2812 Smoke Test R 001a");
