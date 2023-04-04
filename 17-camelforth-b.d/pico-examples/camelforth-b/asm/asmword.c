@@ -4,7 +4,7 @@
 
 // @ https://wokwi.com/projects/360645588605043713
 
-#define PBLINKS 5 // how many blinks?
+#define PBLINKS 17 // how many blinks?
 
 #include "hardware/gpio.h"
 
@@ -23,9 +23,7 @@ void asmword(void) {
     c = (PBLINKS * 2) + 2;
     char *ram;
     ram = (char *) c;
-    unsigned int *cptr = &ram;
-    // passes both the value and the address to assembler routine:
-    return experiment_a_asm(c, cptr);
+    return experiment_a_asm(c, ram);
 }
 
 // END.
