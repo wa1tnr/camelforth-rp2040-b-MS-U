@@ -1,5 +1,5 @@
 // forth.c
-
+// Tue  4 Apr 13:35:03 UTC 2023   many bugfixes today -Wall
 #define HW_CALLED_IN_FORTH_C
 #include "pico-hardware-camelforth.h"
 #include "forth_defines.h"
@@ -652,7 +652,7 @@ CODE(dots) {    /* print stack, for testing */
 
 extern void _pico_LED_init(void);
 extern void _pico_pip(void);
-extern int _pico_LED(void);
+extern void _pico_LED(void);
 
 CODE(LED_init) { /* -- */
     _pico_LED_init();
