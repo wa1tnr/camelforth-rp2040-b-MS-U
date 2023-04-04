@@ -89,23 +89,22 @@ run_program:
    add    r3, r2  // r3 accumulates the count
    push  {r3}
    mov    r1, r0
-   pop    {r3}
-   cmp r3, r1     // cmp r3, #BLINK_TOGGLES
+   pop   {r3}
+   cmp    r3, r1     // cmp r3, #BLINK_TOGGLES
    bne    2b
    pop    {pc}
 
 @  --------------------   main   ------------------
 
 experiment_a_asm:
-   push   {lr}
+   push  {lr}
    ldr    r2, [r1, #0]
-   @ uncomment to use an integer passed in r0 to this assembler function:
-   @ movs   r0, r2
-   push   {r0}
-   bl     program_setup
-   pop    {r0}
-   bl     run_program
-   pop    {pc}
+   @ movs   r0, r2         @ - - -  works with hard-coded constant for ram address?
+   push  {r0}
+   bl    program_setup
+   pop   {r0}
+   bl    run_program
+   pop   {pc}
 
 @ Set data alignment
 .data
