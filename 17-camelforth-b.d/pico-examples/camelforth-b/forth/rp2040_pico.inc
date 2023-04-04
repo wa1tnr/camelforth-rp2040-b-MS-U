@@ -55,7 +55,7 @@
 extern uint8_t getKey(void);       // hardware-independent wrapper
 extern uint8_t getFlKey(void);     // get 'keystroke' from QSPI flashROM RP2040
 
-// extern int _pico_LED();
+// extern void _pico_LED();
 
 /*
 #include <stdint.h>
