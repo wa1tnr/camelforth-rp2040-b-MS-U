@@ -34,7 +34,7 @@ CODE(erase) { // ( offset -- address bool ) // address only valid if bool return
 
     if (debug) printf("\nv.000\n");
 
-    uint32_t tos = (uint32_t) psp[0]; psp++; // pop
+    unsigned int tos = (uint32_t) psp[0]; psp++; // pop
     uint32_t tos_cpy;
     tos_cpy = tos;
     // if (tos_cpy > 0x1FFFFF) {
@@ -56,7 +56,7 @@ CODE(erase) { // ( offset -- address bool ) // address only valid if bool return
         }
     }
 
-    uint32_t offset = tos & FLASH_MASK ;
+    unsigned int offset = tos & FLASH_MASK ;
     tos = offset + 0x10000000;
     --psp; psp[0] = tos;
     if (debug) {
@@ -98,7 +98,7 @@ void flash_write_buffer(void) {
 
         printf(" DEBUG: offset_expnd: %d\n", offset_expnd);
 
-        for (int i = 0; i < FLASH_PAGE_SIZE; ++i)
+        for (unsigned int i = 0; i < FLASH_PAGE_SIZE; ++i)
             program_data[i] = buffer[(i + offset_expnd)];
 
         printf("boundary: \n");
@@ -111,9 +111,9 @@ void flash_write_buffer(void) {
     } // four pages to write
 
     printf("%s", "\n\n FLASH_TARGET_OFFSET: ");
-    printf("%8X", (uint32_t) FLASH_TARGET_OFFSET);
+    printf("%8X", (unsigned int) FLASH_TARGET_OFFSET);
 
-    uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET ;
+    unsigned int start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET ;
 
     printf("%s", "\n\n       start_address: ");
     printf("%8X", start_address);
@@ -124,7 +124,7 @@ void flash_write_buffer(void) {
 void flash_write_test(void) {
     stdio_init_all();
     uint8_t random_data[FLASH_PAGE_SIZE];
-    for (int i = 0; i < FLASH_PAGE_SIZE; ++i)
+    for (unsigned int i = 0; i < FLASH_PAGE_SIZE; ++i)
         random_data[i] = rand() >> 16;
 
     printf("Generated random data:\n");
@@ -142,27 +142,28 @@ void flash_write_test(void) {
     print_buf(flash_target_contents, FLASH_PAGE_SIZE);
 
     bool mismatch = false;
-    for (int i = 0; i < FLASH_PAGE_SIZE; ++i) {
+    for (unsigned int i = 0; i < FLASH_PAGE_SIZE; ++i) {
         if (random_data[i] != flash_target_contents[i])
             mismatch = true;
     }
-    if (mismatch)
+    if (mismatch) {
         printf("Programming failed!\n");
-    else
+    } else {
         printf("Programming successful!\n");
 
         printf("%s", "\n\n            XIP_BASE: ");
-        printf("%8X",   (uint32_t) XIP_BASE);
+        printf("%8X",   (unsigned int) XIP_BASE);
 
         printf("%s", "\n\n FLASH_TARGET_OFFSET: ");
-        printf("%8X", (uint32_t) FLASH_TARGET_OFFSET);
+        printf("%8X", (unsigned int) FLASH_TARGET_OFFSET);
 
-        uint32_t start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET ;
+        unsigned int start_address = (uint32_t) XIP_BASE + (uint32_t) FLASH_TARGET_OFFSET ;
 
         printf("%s", "\n\n       start_address: ");
         printf("%8X", start_address);
 
         printf("%s", "\n\n");
+    }
 }
 
 // END.
