@@ -81,7 +81,7 @@ void cut_main(void) {
 
 // primary api is chopped_acm_write(print_string) from caller
 
-void chopped_acm_write(char *str) {
+void chopped_acm_write() {
     cut_main();
 }
 
