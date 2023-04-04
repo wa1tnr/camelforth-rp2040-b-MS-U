@@ -1,5 +1,21 @@
 // cloop.c
 
+#ifndef NOT_WOKWI
+#define HAVE_FOUND_WOKWI_ENVIRONMENT
+#endif
+
+#ifdef NOT_WOKWI
+#define HAVE_FOUND_NON_WOKWI_ENVIRONMENT
+#endif
+
+#define PBLINKS 8 // how many blinks?
+#include "hardware/gpio.h"
+
+#ifdef HAVE_FOUND_WOKWI_ENVIRONMENT
+#include <Arduino.h>
+#endif
+
+
 // Thu 30 Mar 21:32:55 UTC 2023
 
 // @ https://wokwi.com/projects/360645588605043713
@@ -26,4 +42,5 @@ void asmword(void) {
     return experiment_a_asm(c, ram);
 }
 
+// END.
 // END.
