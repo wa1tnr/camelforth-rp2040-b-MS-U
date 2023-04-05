@@ -1,7 +1,7 @@
 @ asmword.S
 
-@ Tue  4 Apr 22:46:29 UTC 2023
-@ https://wokwi.com/projects/361118569420274689
+@ Wed  5 Apr 22:29:36 UTC 2023
+@ https://wokwi.com/projects/361207971675445249
 
 @ pry-points (mecrisp though)
 @   tos .req r6
@@ -28,12 +28,27 @@
 #define HAVE_FOUND_NON_WOKWI_ASM_ENVIRONMENT
 #endif
 
-
 #ifdef HAVE_FOUND_WOKWI_ASM_ENVIRONMENT
+#warning led alt pin is 25 pio or wokwi
+
+@ is also pio
+
+    #ifndef IS_PIO_NOT_WOKWI
+        #warning LINE 37  it is NOT PIO  I am not Herbert -Spok
+        #warning LINE 38  LED_ALT_PIN_X  is  9  not  25
 .equ LED_ALT_PIN         , 9 @ 25 @ 9
+    #endif
+    #ifdef IS_PIO_NOT_WOKWI
+        #warning LINE 42  it is PIO
+        #warning LINE 43  LED_ALT_PIN_X  is  25  not  9
+.equ LED_ALT_PIN         , 25 @ 9 @ 25 @ 9
+    #endif
 #endif
 
 #ifdef HAVE_FOUND_NON_WOKWI_ASM_ENVIRONMENT
+#warning led alt pin is 25 non wokwi - expecting pico-sdk
+#warning should not see this in pio build log - should see in pico-sdk cli build
+#warning have seen this in the pico-sdk 5 April 2023 21:21 UTC
 .equ LED_ALT_PIN         , 25 @ 9
 #endif
 
