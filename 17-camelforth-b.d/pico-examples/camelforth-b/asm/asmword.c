@@ -1,6 +1,6 @@
 // cloop.c
-// Tue  4 Apr 22:46:29 UTC 2023
-// https://wokwi.com/projects/361118569420274689
+// Tue  4 Apr 23:33:11 UTC 2023
+// https://wokwi.com/projects/361121269426995201
 
 #ifndef NOT_WOKWI
 #define HAVE_FOUND_WOKWI_ENVIRONMENT
@@ -41,11 +41,9 @@ void setup(void) {
 #warning this is  not wokwi asmword function header
 void asmword(void) {
 #endif
-
     static volatile int c; // not volatile static as it was, prior
     c = (PBLINKS * 2) + 2;
-    char *ram;
-    ram = (char *) c;
+    unsigned int ram = &c;
     return experiment_a_asm(c, ram);
 }
 
